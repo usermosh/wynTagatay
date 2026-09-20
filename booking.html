@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Your Stay — Lunaire Tagaytay</title>
+    <meta name="description"
+        content="Book a room at Lunaire Tagaytay in four steps: dates, room and rate, guest details, confirmation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="theme-color" content="#080d1a" />
+    <link rel="icon" type="image/png" href="logo-mark.png" />
+</head>
+
+<body>
+    <div class="loader" id="site-loader" role="status" aria-label="Loading Lunaire experience">
+        <div class="loader-inner">
+            <span class="loader-moon" aria-hidden="true">☾</span>
+            <p class="loader-word">LUNAIRE</p>
+            <p class="loader-sub">Tagaytay · Est. 2023</p>
+            <div class="loader-bar" aria-hidden="true"><span></span></div>
+        </div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="index.html" aria-label="Lunaire home"><img class="brand-logo"
+                    src="logo.png" alt="Lunaire" width="78" height="48" /></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Open menu">☰</button>
+            <nav class="nav" id="site-nav" aria-label="Primary"><a href="index.html">Stay</a><a
+                    href="rooms.html">Rooms</a><a href="dining.html">Dining</a><a
+                    href="wellness-recreation.html">Wellness &amp; Recreation</a><a
+                    href="entertainment-leisure.html">Entertainment &amp; Leisure</a><a href="about.html">Our
+                    Story</a><a class="btn btn-primary" href="booking.html" aria-current="page"
+                    style="min-height:44px;padding:.6rem 1.3rem">Reserve</a></nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="overline">Reservations</p>
+                <h1 class="h2">Book your stay.</h1>
+                <p class="lede">Four short steps. Pick dates, pick a room, leave your details. The moon concierge
+                    confirms within 24 hours.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <ol class="stepper" aria-label="Booking progress">
+                    <li aria-current="step"><span class="step-dot" aria-hidden="true">1</span><span>Check-in &amp;
+                            Check-out Date</span></li>
+                    <li><span class="step-dot" aria-hidden="true">2</span><span>Select Rooms &amp; Rates</span></li>
+                    <li><span class="step-dot" aria-hidden="true">3</span><span>Guest Information</span></li>
+                    <li><span class="step-dot" aria-hidden="true">4</span><span>Booking Confirmation</span></li>
+                </ol>
+                <div class="book-layout">
+                    <div class="book-flow">
+                        <section class="step-panel is-active" data-step="1" aria-labelledby="step1-title">
+                            <h2 id="step1-title" tabindex="-1">Check-in and check-out</h2>
+                            <div class="date-fields">
+                                <div class="field"><label for="f-checkin">Check-in</label><input id="f-checkin"
+                                        type="text" readonly placeholder="Pick a date below" /></div>
+                                <div class="field"><label for="f-checkout">Check-out</label><input id="f-checkout"
+                                        type="text" readonly placeholder="Pick a date below" /></div>
+                                <div class="field"><label for="f-code">Special code</label><input id="f-code"
+                                        type="text" autocomplete="off" placeholder="Optional" /></div>
+                            </div>
+                            <p class="form-note" id="night-count" role="status">Select dates below</p>
+                            <div class="calendar-toggle-wrap">
+                                <button class="btn btn-ghost calendar-toggle" id="calendar-toggle" type="button"
+                                    aria-expanded="false" aria-controls="calendar-panel">
+                                    <span>Choose your nights</span>
+                                    <span class="calendar-summary" id="calendar-summary">Select dates</span>
+                                </button>
+                                <div class="calendar-panel" id="calendar-panel" hidden>
+                                    <div class="cal-head">
+                                        <h3>Choose your nights</h3>
+                                        <div class="cal-nav">
+                                            <button id="cal-prev" type="button" aria-label="Previous months">‹</button>
+                                            <button id="cal-next" type="button" aria-label="Next months">›</button>
+                                        </div>
+                                    </div>
+                                    <div class="cal-grid" id="cal-grid"></div>
+                                    <ul class="legend" aria-label="Calendar legend">
+                                        <li><i class="lg-avail" aria-hidden="true"></i>Available date</li>
+                                        <li><i class="lg-pick" aria-hidden="true"></i>Check-in / check-out</li>
+                                        <li><i class="lg-stay" aria-hidden="true"></i>Nights of stay</li>
+                                        <li><i class="lg-past" aria-hidden="true"></i>Past date</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="form-note">Check-in from 2 PM. Check-out at 12 noon. Rates cover the dates shown
+                                and stay fixed once you continue.</p>
+                            <p class="status" id="step-status-1" role="status" aria-live="polite"></p>
+                            <div class="step-actions"><button class="btn btn-primary" id="to-rooms"
+                                    type="button">CONTINUE</button></div>
+                        </section>
+                        <section class="step-panel" data-step="2" aria-labelledby="step2-title" hidden>
+                            <h2 id="step2-title" tabindex="-1">Rooms and rates</h2>
+                            <p class="lede">Tap a room to see its rates. Each rate lists the per-night price in PHP.</p>
+                            <div class="room-grid">
+                                <button class="media-card room-pick" type="button" data-room="dusk"
+                                    aria-pressed="false">
+                                    <img src="room-dusk.png"
+                                        alt="Dusk Room with garden terrace glowing warm at night" loading="lazy"
+                                        onerror="this.remove()" />
+                                    <span class="body"><span class="overline">Garden Courtyard</span><span
+                                            class="demand">High demand</span><b
+                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Dusk
+                                            Room</b><span style="color:var(--text-secondary)">28 sqm, garden terrace,
+                                            rain shower. Sleeps 2.</span><span class="price">₱7,800 <span
+                                                style="font-size:.9rem;color:var(--text-secondary)">/
+                                                night</span></span></span>
+                                </button>
+                                <button class="media-card room-pick" type="button" data-room="moon"
+                                    aria-pressed="false">
+                                    <img src="room-moon-suite.jpg"
+                                        alt="Moon Suite with panoramic dusk view over Taal" loading="lazy"
+                                        onerror="this.remove()" />
+                                    <span class="body"><span class="overline">Highland view</span><span
+                                            class="demand">High demand</span><b
+                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Moon
+                                            Suite</b><span style="color:var(--text-secondary)">46 sqm, soaking tub,
+                                            private moon deck. Sleeps 2.</span><span class="price">₱13,500 <span
+                                                style="font-size:.9rem;color:var(--text-secondary)">/
+                                                night</span></span></span>
+                                </button>
+                                <button class="media-card room-pick" type="button" data-room="villa"
+                                    aria-pressed="false">
+                                    <img src="room-villa.jpg"
+                                        alt="Lunaire Signature Villa lounge with fireplace at night" loading="lazy"
+                                        onerror="this.remove()" />
+                                    <span class="body"><span class="overline">Top floor</span><span class="demand">Only
+                                            2 villas left</span><b
+                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Lunaire
+                                            Signature Villa</b><span style="color:var(--text-secondary)">72 sqm,
+                                            separate lounge, fireplace. Sleeps 3.</span><span class="price">₱21,000
+                                            <span style="font-size:.9rem;color:var(--text-secondary)">/
+                                                night</span></span></span>
+                                </button>
+                            </div>
+                            <div class="rate-detail" id="rate-detail" hidden>
+                                <div class="rate-detail-head">
+                                    <img id="rate-img" src="room-dusk.jpg" alt="" />
+                                    <div>
+                                        <h3 id="rate-name">Room</h3>
+                                        <p id="rate-blurb"></p>
+                                        <p class="form-note">Prices are per room per night, before service charge and
+                                            taxes.</p>
+                                    </div>
+                                </div>
+                                <div class="rate-list" id="rate-list"></div>
+                            </div>
+                            <p class="status" id="step-status-2" role="status" aria-live="polite"></p>
+                            <div class="step-actions">
+                                <button class="btn btn-ghost" id="back-to-dates" type="button">Back</button>
+                                <button class="btn btn-primary" id="to-guest" type="button">CONTINUE</button>
+                            </div>
+                        </section>
+                        <section class="step-panel" data-step="3" aria-labelledby="step3-title" hidden>
+                            <h2 id="step3-title" tabindex="-1">Guest information</h2>
+                            <form id="guest-form" novalidate>
+                                <div class="field"><label for="g-name">Full name</label><input id="g-name" name="name"
+                                        type="text" autocomplete="name" required placeholder="Maria Santos" /></div>
+                                <div class="field"><label for="g-email">Email</label><input id="g-email" name="email"
+                                        type="email" autocomplete="email" required placeholder="you@example.com" />
+                                </div>
+                                <div class="field"><label for="g-phone">Mobile number</label><input id="g-phone"
+                                        name="phone" type="tel" autocomplete="tel" required
+                                        placeholder="+63 917 000 0000" /></div>
+                                <div class="field"><label for="g-arrival">Estimated arrival</label><select
+                                        id="g-arrival" name="arrival">
+                                        <option>2 PM – 6 PM</option>
+                                        <option>6 PM – 10 PM</option>
+                                        <option>After 10 PM (late check-in)</option>
+                                    </select></div>
+                                <div class="field"><label for="g-notes">Requests (optional)</label><textarea
+                                        id="g-notes" name="notes" rows="3"
+                                        placeholder="Anniversary setup, quiet corner room, extra bed"></textarea></div>
+                                <div class="step-actions">
+                                    <button class="btn btn-ghost" id="back-to-rooms" type="button">Back</button>
+                                    <button class="btn btn-primary" type="submit">CONFIRM RESERVATION</button>
+                                </div>
+                                <p class="status" id="step-status-3" role="status" aria-live="polite"></p>
+                            </form>
+                        </section>
+                        <section class="step-panel" data-step="4" aria-labelledby="step4-title" hidden>
+                            <div class="confirm-card">
+                                <span class="confirm-mark" aria-hidden="true">✓</span>
+                                <h2 id="step4-title" tabindex="-1">Request received.</h2>
+                                <p class="lede">Reference <b id="confirm-ref"
+                                        style="color:var(--text-accent)">LUN-000000</b>. The moon concierge confirms by
+                                    email within 24 hours. No payment is due now.</p>
+                                <dl>
+                                    <dt>Guest</dt>
+                                    <dd id="confirm-name">Guest</dd>
+                                    <dt>Room</dt>
+                                    <dd id="confirm-room">Pending</dd>
+                                    <dt>Dates</dt>
+                                    <dd id="confirm-dates">Pending</dd>
+                                    <dt>Total</dt>
+                                    <dd id="confirm-total">Pending</dd>
+                                </dl>
+                                <div class="hero-cta"><a class="btn btn-ghost" href="index.html">Back to home</a></div>
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="summary" aria-label="Booking summary">
+                        <h2>Booking Summary</h2>
+                        <div class="summary-row"><span>Date: <span id="sum-dates">Select dates</span></span><button
+                                id="edit-dates" type="button">Edit</button></div>
+                        <div class="summary-row"><span>Special code: <span id="sum-code">(No input)</span></span><button
+                                id="edit-code" type="button">Edit</button></div>
+                        <div class="summary-lines" id="sum-lines">
+                            <div class="line"><span>No rooms booked yet.</span></div>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;font-size:.9rem">
+                            <span>Booked Rooms</span><button id="sum-reset" type="button"
+                                style="border:1px solid currentColor;background:transparent;color:inherit;border-radius:6px;font-size:.75rem;padding:.3rem .6rem;min-height:32px;cursor:pointer">Reset</button>
+                        </div>
+                        <div class="summary-total" id="sum-total"><span>Total charge</span><span>PHP 0.00</span></div>
+                        <button class="btn btn-night" id="sum-continue" type="button">CONTINUE</button>
+                    </aside>
+                    <div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true"
+                        aria-labelledby="booking-modal-title" aria-hidden="true">
+                        <div class="booking-modal-backdrop" data-close="modal"></div>
+                        <div class="booking-modal-panel">
+                            <button class="booking-modal-close" type="button" aria-label="Close confirmation">×</button>
+                            <div class="confirm-mark" aria-hidden="true">✓</div>
+                            <h2 id="booking-modal-title">Reservation confirmed</h2>
+                            <p class="lede">Your request has been received. The moon concierge will reach out within 24
+                                hours with the final confirmation details.</p>
+                            <dl class="booking-modal-details">
+                                <dt>Reference</dt>
+                                <dd id="modal-ref">LUN-000000</dd>
+                                <dt>Room</dt>
+                                <dd id="modal-room">—</dd>
+                                <dt>Dates</dt>
+                                <dd id="modal-dates">—</dd>
+                                <dt>Total</dt>
+                                <dd id="modal-total">PHP 0.00</dd>
+                            </dl>
+                            <div class="hero-cta"><button class="btn btn-primary" id="modal-return-home"
+                                    type="button">Return to home</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="foot-base"><span>© 2026 Lunaire Boutique Hotel Resort.</span><span>Where memories shine under
+                    the moonlight.</span></div>
+        </div>
+    </footer>
+    <script src="main.js" defer></script>
+    <script src="booking.js" defer></script>
+</body>
+
+</html>
