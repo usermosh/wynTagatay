@@ -425,15 +425,15 @@ h3 {
 
 .tile-hero {
   grid-row: span 2;
-  background: linear-gradient(rgba(4, 6, 12, 0.25), rgba(4, 6, 12, 0.78)), url('../img/room-moon-suite.jpg') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.25), rgba(4, 6, 12, 0.78)), url('room-villa.png') center / cover, var(--surface-card);
 }
 
 .tile-2 {
-  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('../img/dining-hall.jpg') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('dining-hall.png') center / cover, var(--surface-card);
 }
 
 .tile-3 {
-  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('../img/pool.jpg') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('pool.png') center / cover, var(--surface-card);
 }
 
 .tile-4 {
