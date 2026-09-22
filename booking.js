@@ -3,39 +3,23 @@
 (function () {
   var TAX = 0.1895;
   var RATES = {
-    dusk: {
-      name: 'Dusk Room', img: 'assets/img/room-dusk.jpg',
-      blurb: '28 sqm, garden terrace, rain shower. Sleeps 2.',
-      rates: [
-        { id: 'direct', name: 'Book Direct and Save (Room Only)', price: 7800, note: 'Room only. Best flexible rate.' },
-        { id: 'sundown', name: 'Sundown Exclusive (with Breakfast)', price: 8900, note: 'Breakfast for two at Moonlight Lounge.' },
-        { id: 'rainy', name: 'Rainy Days Cozy Stay', price: 5070, note: '35% off. Stay of 2+ nights.' },
-        { id: 'taal', name: 'Taal Dawn Package', price: 9400, note: 'Breakfast plus sunrise viewing setup for two.' }
-      ]
-    },
-    moon: {
-      name: 'Moon Suite', img: 'assets/img/room-moon-suite.jpg',
-      blurb: '46 sqm, soaking tub, private moon deck. Sleeps 2.',
-      rates: [
-        { id: 'direct', name: 'Book Direct and Save (Room Only)', price: 13500, note: 'Room only. Best flexible rate.' },
-        { id: 'sundown', name: 'Sundown Exclusive (with Breakfast)', price: 15200, note: 'Breakfast for two at Moonlight Lounge.' },
-        { id: 'rainy', name: 'Rainy Days Cozy Stay', price: 8775, note: '35% off. Stay of 2+ nights.' },
-        { id: 'taal', name: 'Taal Dawn Package', price: 16100, note: 'Breakfast plus sunrise viewing setup for two.' }
-      ]
-    },
-    villa: {
-      name: 'Lunaire Signature Villa', img: 'assets/img/room-villa.jpg',
-      blurb: '72 sqm, separate lounge, fireplace. Sleeps 3.',
-      rates: [
-        { id: 'direct', name: 'Book Direct and Save (Room Only)', price: 21000, note: 'Room only. Best flexible rate.' },
-        { id: 'sundown', name: 'Sundown Exclusive (with Breakfast)', price: 23600, note: 'Breakfast for three, villa served.' },
-        { id: 'rainy', name: 'Rainy Days Cozy Stay', price: 13650, note: '35% off. Stay of 2+ nights.' },
-        { id: 'taal', name: 'Taal Dawn Package', price: 24800, note: 'Breakfast plus dedicated concierge for the day.' }
-      ]
-    }
+    classic: { name: 'Lunaire Classic Room', capacity: 2, img: 'Lunaire-Classic-Room.png', blurb: '28 sqm, king or twin beds, garden or city view. Sleeps 2.', rates: ratesFor(6500) },
+    deluxe: { name: 'Lunaire Deluxe Room', capacity: 2, img: 'Lunaire-Deluxe-Room.png', blurb: '34 sqm, king bed, garden or scenic view. Sleeps 2.', rates: ratesFor(7500) },
+    premier: { name: 'Lunaire Premier Room', capacity: 2, img: 'Lunaire-Premier-Room-with-Taal-View_.png', blurb: '40 sqm, king bed, scenic Tagaytay view. Sleeps 2.', rates: ratesFor(8500) },
+    junior: { name: 'Lunaire Junior Suite', capacity: 3, img: 'Lunaire-Junior-Suite_.png', blurb: '52 sqm, king bed, scenic view. Sleeps 2–3.', rates: ratesFor(10500) },
+    executive: { name: 'Lunaire Executive Suite', capacity: 3, img: 'Executive-Suite_.png', blurb: '68 sqm, king bed, panoramic view. Sleeps 2–3.', rates: ratesFor(13500) },
+    moonlight: { name: 'Moonlight Suite', capacity: 2, img: 'Moonlight-Suite.png', blurb: '90 sqm, king bed, panoramic view, private balcony concept. Sleeps 2.', rates: ratesFor(17500) },
+    family: { name: 'Family / Connecting Rooms', capacity: 4, img: 'Family-Experience_.png', blurb: '56 sqm combined, king and twin beds. Sleeps 4.', rates: ratesFor(12000) }
   };
 
-  var state = { checkin: null, checkout: null, code: '', room: null, rate: null, adults: 2, step: 1 };
+  function ratesFor(price) {
+    return [
+      { id: 'flexible', name: 'Flexible Stay Rate', price: price, note: 'Conceptual flexible rate; changes remain subject to confirmation.' },
+      { id: 'offer', name: 'Special Offer Rate', price: Math.round(price * 0.92), note: 'Conceptual promotional rate with sample benefits.' }
+    ];
+  }
+
+  var state = { checkin: null, checkout: null, code: '', room: null, rate: null, adults: 2, children: 0, rooms: 1, packagePrice: 0, packageName: 'No package', addons: [], step: 1 };
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var base = { y: 2026, m: 8 }; // September 2026
   var today = new Date(2026, 8, 20);
@@ -43,6 +27,34 @@
   function $(id) { return document.getElementById(id); }
   function fmtDate(d) { return MONTHS[d.getMonth()].slice(0,3) + ' ' + d.getDate() + ', ' + d.getFullYear(); }
   function fmtPHP(n) { return 'PHP ' + n.toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function packageDetails() {
+    var select = $('g-package');
+    var option = select && select.options[select.selectedIndex];
+    return { name: option ? option.textContent : 'No package', price: option ? Number(option.dataset.price || 0) : 0 };
+  }
+  function applyBookingContext() {
+    var params = new URLSearchParams(window.location.search);
+    var packageSelect = $('g-package');
+    var packageKey = params.get('package');
+    if (packageSelect && packageKey) {
+      var option = Array.prototype.find.call(packageSelect.options, function (item) { return item.value === packageKey; });
+      if (option) packageSelect.value = packageKey;
+    }
+    var addonKey = params.get('addon');
+    if (addonKey) {
+      var addon = document.querySelector('input[name="addons"][value="' + addonKey + '"]');
+      if (addon) addon.checked = true;
+    }
+  }
+  function addonDetails() {
+    return Array.prototype.slice.call(document.querySelectorAll('input[name="addons"]:checked')).map(function (input) {
+      return { name: input.parentElement.textContent.trim(), price: Number(input.dataset.price || 0) };
+    });
+  }
+  function enhancementTotal() {
+    var pack = packageDetails();
+    return pack.price + addonDetails().reduce(function (sum, addon) { return sum + addon.price; }, 0);
+  }
   function nights() {
     if (!state.checkin || !state.checkout) return 0;
     return Math.round((state.checkout - state.checkin) / 86400000);
@@ -206,21 +218,6 @@
       info.appendChild(note);
       var side = document.createElement('div');
       side.className = 'rate-side';
-      var field = document.createElement('div');
-      field.className = 'field';
-      var lab = document.createElement('label');
-      lab.textContent = 'Adults';
-      var sel = document.createElement('select');
-      sel.setAttribute('aria-label', 'Adults for ' + r.name);
-      [1, 2, 3, 4].forEach(function (a) {
-        var o = document.createElement('option');
-        o.value = String(a);
-        o.textContent = String(a);
-        if (a === state.adults) o.selected = true;
-        sel.appendChild(o);
-      });
-      lab.appendChild(sel);
-      field.appendChild(lab);
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'btn btn-primary';
@@ -228,11 +225,9 @@
       btn.textContent = '+ Book this room';
       btn.addEventListener('click', function () {
         state.rate = r.id;
-        state.adults = Number(sel.value);
         renderSummary();
         goStep(3);
       });
-      side.appendChild(field);
       side.appendChild(btn);
       card.appendChild(info);
       card.appendChild(side);
@@ -260,7 +255,9 @@
     if (rate) {
       var room = RATES[state.room];
       var k = nights() || 0;
-      var sub = rate.price * Math.max(k, 1);
+      var roomSub = rate.price * Math.max(k, 1) * state.rooms;
+      var enhancementSub = enhancementTotal();
+      var sub = roomSub + enhancementSub;
       var wrap = document.createElement('div');
       wrap.className = 'line';
       var left = document.createElement('div');
@@ -269,7 +266,7 @@
       var d1 = document.createElement('div');
       d1.textContent = rate.name;
       var d2 = document.createElement('div');
-      d2.textContent = state.adults + ' adult' + (state.adults > 1 ? 's' : '') + ' · ' + fmtPHP(rate.price) + ' x ' + Math.max(k, 1) + ' night' + (Math.max(k, 1) > 1 ? 's' : '');
+      d2.textContent = state.adults + ' adult' + (state.adults > 1 ? 's' : '') + ', ' + state.children + ' children · ' + state.rooms + ' room' + (state.rooms > 1 ? 's' : '') + ' · ' + fmtPHP(rate.price) + ' x ' + Math.max(k, 1) + ' night' + (Math.max(k, 1) > 1 ? 's' : '');
       left.appendChild(b);
       left.appendChild(d1);
       left.appendChild(d2);
@@ -296,6 +293,13 @@
       wrap.appendChild(left);
       wrap.appendChild(right);
       lines.appendChild(wrap);
+      var pack = packageDetails();
+      if (pack.price || addonDetails().length) {
+        var extras = document.createElement('div');
+        extras.className = 'line';
+        extras.innerHTML = '<span>Package and enhancements</span><span>' + fmtPHP(enhancementSub) + '</span>';
+        lines.appendChild(extras);
+      }
       var tax = sub * TAX;
       var t1 = document.createElement('div');
       t1.className = 'line';
@@ -304,7 +308,7 @@
       t1v.textContent = fmtPHP(tax);
       t1.appendChild(t1v);
       lines.appendChild(t1);
-      total.innerHTML = '<span>Total charge</span><span>' + fmtPHP(sub + tax) + '</span>';
+      total.innerHTML = '<span>Estimated conceptual total</span><span>' + fmtPHP(sub + tax) + '</span>';
     } else {
       lines.innerHTML = '<div class="line"><span>No rooms booked yet.</span></div>';
       total.innerHTML = '<span>Total charge</span><span>PHP 0.00</span>';
@@ -328,11 +332,12 @@
 
   // --- Wire up (re-runnable: instant tab nav swaps in fresh DOM) ---
   function initBooking() {
-    state = { checkin: null, checkout: null, code: '', room: null, rate: null, adults: 2, step: 1 };
+    state = { checkin: null, checkout: null, code: '', room: null, rate: null, adults: 2, children: 0, rooms: 1, packagePrice: 0, packageName: 'No package', addons: [], step: 1 };
     base = { y: 2026, m: 8 };
     steps = Array.prototype.slice.call(document.querySelectorAll('.step-panel'));
     if (!steps.length) return;
     renderCal();
+    applyBookingContext();
     renderSummary();
     goStep(1);
 
@@ -354,6 +359,16 @@
     if (codeInput) codeInput.addEventListener('input', function () {
       state.code = codeInput.value.trim();
       renderSummary();
+    });
+    ['f-adults', 'f-children', 'f-rooms'].forEach(function (id) {
+      var input = $(id);
+      if (!input) return;
+      input.addEventListener('change', function () {
+        state.adults = Number($('f-adults').value);
+        state.children = Number($('f-children').value);
+        state.rooms = Number($('f-rooms').value);
+        renderSummary();
+      });
     });
 
     var calToggle = $('calendar-toggle');
@@ -395,6 +410,8 @@
     if (toGuest) toGuest.addEventListener('click', function () {
       var say = need(2);
       if (!currentRate()) { say('Choose a room, then press Book this room on a rate.'); return; }
+      var capacity = RATES[state.room].capacity * state.rooms;
+      if (state.adults + state.children > capacity) { say('This room type may not accommodate the selected number of guests.'); return; }
       say('');
       goStep(3);
     });
@@ -402,20 +419,25 @@
     var back3 = $('back-to-rooms');
     if (back3) back3.addEventListener('click', function () { goStep(2); });
     var guest = $('guest-form');
+    var packageSelect = $('g-package');
+    if (packageSelect) packageSelect.addEventListener('change', renderSummary);
+    document.querySelectorAll('input[name="addons"]').forEach(function (input) { input.addEventListener('change', renderSummary); });
     if (guest) guest.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!guest.checkValidity()) { guest.reportValidity(); return; }
       var data = new FormData(guest);
-      var ref = 'LUN-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+      var ref = 'LUNAIRE-DEMO-2026-' + String(Math.floor(Math.random() * 900) + 100);
       $('confirm-ref').textContent = ref;
       $('confirm-name').textContent = String(data.get('name') || 'Guest');
       $('confirm-room').textContent = RATES[state.room].name + ' — ' + currentRate().name;
       $('confirm-dates').textContent = fmtDate(state.checkin) + ' to ' + fmtDate(state.checkout) + ' (' + nights() + ' nights)';
       $('confirm-total').textContent = $('sum-total').lastElementChild.textContent;
+      $('confirm-method').textContent = String(data.get('requestMethod') || 'Conceptual request');
       document.getElementById('modal-ref').textContent = ref;
       document.getElementById('modal-room').textContent = RATES[state.room].name + ' — ' + currentRate().name;
       document.getElementById('modal-dates').textContent = fmtDate(state.checkin) + ' to ' + fmtDate(state.checkout) + ' (' + nights() + ' nights)';
       document.getElementById('modal-total').textContent = $('sum-total').lastElementChild.textContent;
+      document.getElementById('modal-method').textContent = String(data.get('requestMethod') || 'Conceptual request');
       goStep(4);
       renderSummary();
       openBookingModal();

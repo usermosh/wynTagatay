@@ -23,7 +23,7 @@
         <div class="loader-inner">
             <span class="loader-moon" aria-hidden="true">☾</span>
             <p class="loader-word">LUNAIRE</p>
-            <p class="loader-sub">Tagaytay · Est. 2023</p>
+            <p class="loader-sub">Tagaytay · Fictional concept</p>
             <div class="loader-bar" aria-hidden="true"><span></span></div>
         </div>
     </div>
@@ -47,8 +47,8 @@
             <div class="wrap">
                 <p class="overline">Reservations</p>
                 <h1 class="h2">Book your stay.</h1>
-                <p class="lede">Four short steps. Pick dates, pick a room, leave your details. The moon concierge
-                    confirms within 24 hours.</p>
+                <p class="lede">This fictional prototype lets you choose dates, guests, a sample room, and optional
+                    enhancements before reviewing a simulated reservation request. No real availability or payment is processed.</p>
             </div>
         </section>
         <section class="section">
@@ -71,6 +71,9 @@
                                         type="text" readonly placeholder="Pick a date below" /></div>
                                 <div class="field"><label for="f-code">Special code</label><input id="f-code"
                                         type="text" autocomplete="off" placeholder="Optional" /></div>
+                                <div class="field"><label for="f-adults">Adults</label><select id="f-adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
+                                <div class="field"><label for="f-children">Children</label><select id="f-children"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+                                <div class="field"><label for="f-rooms">Rooms</label><select id="f-rooms"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option></select></div>
                             </div>
                             <p class="form-note" id="night-count" role="status">Select dates below</p>
                             <div class="calendar-toggle-wrap">
@@ -104,51 +107,19 @@
                         </section>
                         <section class="step-panel" data-step="2" aria-labelledby="step2-title" hidden>
                             <h2 id="step2-title" tabindex="-1">Rooms and rates</h2>
-                            <p class="lede">Tap a room to see its rates. Each rate lists the per-night price in PHP.</p>
+                            <p class="lede">Tap a room to see its conceptual rates. Each rate lists a sample per-night price in PHP.</p>
                             <div class="room-grid">
-                                <button class="media-card room-pick" type="button" data-room="dusk"
-                                    aria-pressed="false">
-                                    <img src="room-dusk.png"
-                                        alt="Dusk Room with garden terrace glowing warm at night" loading="lazy"
-                                        onerror="this.remove()" />
-                                    <span class="body"><span class="overline">Garden Courtyard</span><span
-                                            class="demand">High demand</span><b
-                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Dusk
-                                            Room</b><span style="color:var(--text-secondary)">28 sqm, garden terrace,
-                                            rain shower. Sleeps 2.</span><span class="price">₱7,800 <span
-                                                style="font-size:.9rem;color:var(--text-secondary)">/
-                                                night</span></span></span>
-                                </button>
-                                <button class="media-card room-pick" type="button" data-room="moon"
-                                    aria-pressed="false">
-                                    <img src="room-moon-suite.jpg"
-                                        alt="Moon Suite with panoramic dusk view over Taal" loading="lazy"
-                                        onerror="this.remove()" />
-                                    <span class="body"><span class="overline">Highland view</span><span
-                                            class="demand">High demand</span><b
-                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Moon
-                                            Suite</b><span style="color:var(--text-secondary)">46 sqm, soaking tub,
-                                            private moon deck. Sleeps 2.</span><span class="price">₱13,500 <span
-                                                style="font-size:.9rem;color:var(--text-secondary)">/
-                                                night</span></span></span>
-                                </button>
-                                <button class="media-card room-pick" type="button" data-room="villa"
-                                    aria-pressed="false">
-                                    <img src="room-villa.jpg"
-                                        alt="Lunaire Signature Villa lounge with fireplace at night" loading="lazy"
-                                        onerror="this.remove()" />
-                                    <span class="body"><span class="overline">Top floor</span><span class="demand">Only
-                                            2 villas left</span><b
-                                            style="color:var(--text-bright);font-family:var(--font-display);font-size:1.3rem">Lunaire
-                                            Signature Villa</b><span style="color:var(--text-secondary)">72 sqm,
-                                            separate lounge, fireplace. Sleeps 3.</span><span class="price">₱21,000
-                                            <span style="font-size:.9rem;color:var(--text-secondary)">/
-                                                night</span></span></span>
-                                </button>
+                                <button class="media-card room-pick" type="button" data-room="classic" aria-pressed="false"><img src="Lunaire-Classic-Room.png" alt="Conceptual Lunaire Classic Room" loading="lazy" /><span class="body"><span class="overline">28 sqm · Sleeps 2</span><b>Lunaire Classic Room</b><span>King or twin beds, garden or city view.</span><span class="price">₱6,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="deluxe" aria-pressed="false"><img src="Lunaire-Deluxe-Room.png" alt="Conceptual Lunaire Deluxe Room" loading="lazy" /><span class="body"><span class="overline">34 sqm · Sleeps 2</span><b>Lunaire Deluxe Room</b><span>King bed, garden or scenic view.</span><span class="price">₱7,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="premier" aria-pressed="false"><img src="Lunaire-Premier-Room-with-Taal-View_.png" alt="Conceptual Lunaire Premier Room" loading="lazy" /><span class="body"><span class="overline">40 sqm · Sleeps 2</span><b>Lunaire Premier Room</b><span>King bed and scenic Tagaytay view.</span><span class="price">₱8,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="junior" aria-pressed="false"><img src="Lunaire-Junior-Suite_.png" alt="Conceptual Lunaire Junior Suite" loading="lazy" /><span class="body"><span class="overline">52 sqm · Sleeps 2–3</span><b>Lunaire Junior Suite</b><span>King bed and additional living space.</span><span class="price">₱10,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="executive" aria-pressed="false"><img src="Executive-Suite_.png" alt="Conceptual Lunaire Executive Suite" loading="lazy" /><span class="body"><span class="overline">68 sqm · Sleeps 2–3</span><b>Lunaire Executive Suite</b><span>King bed and panoramic view.</span><span class="price">₱13,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="moonlight" aria-pressed="false"><img src="Moonlight-Suite.png" alt="Conceptual Moonlight Suite" loading="lazy" /><span class="body"><span class="overline">90 sqm · Sleeps 2</span><b>Moonlight Suite</b><span>Panoramic view and private balcony concept.</span><span class="price">₱17,500 <small>/ sample night</small></span></span></button>
+                                <button class="media-card room-pick" type="button" data-room="family" aria-pressed="false"><img src="Family-Experience_.png" alt="Conceptual family connecting rooms" loading="lazy" /><span class="body"><span class="overline">56 sqm · Sleeps 4</span><b>Family / Connecting Rooms</b><span>King and twin beds for flexible stays.</span><span class="price">₱12,000 <small>/ sample night</small></span></span></button>
                             </div>
                             <div class="rate-detail" id="rate-detail" hidden>
                                 <div class="rate-detail-head">
-                                    <img id="rate-img" src="room-dusk.jpg" alt="" />
+                                    <img id="rate-img" src="room-dusk.png" alt="" />
                                     <div>
                                         <h3 id="rate-name">Room</h3>
                                         <p id="rate-blurb"></p>
@@ -175,6 +146,9 @@
                                 <div class="field"><label for="g-phone">Mobile number</label><input id="g-phone"
                                         name="phone" type="tel" autocomplete="tel" required
                                         placeholder="+63 917 000 0000" /></div>
+                                <div class="field"><label for="g-city">Country or city (optional)</label><input id="g-city" name="city" type="text" autocomplete="address-level2" placeholder="Manila, Philippines" /></div>
+                                <div class="field"><label for="g-contact">Preferred contact method</label><select id="g-contact" name="contactMethod"><option>Email</option><option>Mobile number</option><option>Either email or mobile</option></select></div>
+                                <div class="field"><label for="g-children-ages">Children’s ages (optional)</label><input id="g-children-ages" name="childrenAges" type="text" placeholder="Example: 6, 10" /></div>
                                 <div class="field"><label for="g-arrival">Estimated arrival</label><select
                                         id="g-arrival" name="arrival">
                                         <option>2 PM – 6 PM</option>
@@ -184,9 +158,15 @@
                                 <div class="field"><label for="g-notes">Requests (optional)</label><textarea
                                         id="g-notes" name="notes" rows="3"
                                         placeholder="Anniversary setup, quiet corner room, extra bed"></textarea></div>
+                                    <div class="field"><label for="g-package">Conceptual package</label><select id="g-package" name="package"><option value="none" data-price="0">No package</option><option value="romantic" data-price="2500">Moonlit Romantic Escape (+PHP 2,500)</option><option value="stillness" data-price="3500">Weekend of Stillness (+PHP 3,500)</option><option value="celebration" data-price="3000">Celebration Under the Moon (+PHP 3,000)</option><option value="wellness" data-price="4200">Moonlight Wellness Retreat (+PHP 4,200)</option><option value="stay-dine" data-price="2800">Stay &amp; Dine (+PHP 2,800)</option></select></div>
+                                    <fieldset class="field"><legend>Optional enhancements</legend><label><input type="checkbox" name="addons" value="romantic-setup" data-price="1200" /> Romantic room setup — PHP 1,200</label><label><input type="checkbox" name="addons" value="dessert" data-price="650" /> Celebration dessert — PHP 650</label><label><input type="checkbox" name="addons" value="stargazing" data-price="900" /> Stargazing experience — PHP 900</label><label><input type="checkbox" name="addons" value="cinema" data-price="1500" /> Private cinema night — PHP 1,500</label></fieldset>
+                                    <div class="field"><label for="g-accessibility">Accessibility requirements (optional)</label><textarea id="g-accessibility" name="accessibility" rows="2" placeholder="Share anything that may help us prepare a more comfortable experience"></textarea></div>
+                                    <div class="field"><label for="g-request-method">Simulated request method</label><select id="g-request-method" name="requestMethod"><option>Pay at property — conceptual option</option><option>Bank transfer — simulated option</option><option>Card payment — simulated interface only</option></select></div>
+                                    <fieldset class="field"><legend>Required prototype confirmations</legend><label><input type="checkbox" name="confirm-info" required /> I confirm the information entered is correct.</label><label><input type="checkbox" name="confirm-policy" required /> I have reviewed the conceptual hotel policies.</label><label><input type="checkbox" name="confirm-demo" required /> I understand this is a fictional prototype and not a real reservation.</label></fieldset>
+                                    <label class="prototype-notice"><input type="checkbox" name="confirm-requests" required /> I understand special requests are subject to confirmation.</label>
                                 <div class="step-actions">
                                     <button class="btn btn-ghost" id="back-to-rooms" type="button">Back</button>
-                                    <button class="btn btn-primary" type="submit">CONFIRM RESERVATION</button>
+                                    <button class="btn btn-primary" type="submit">SEND SAMPLE REQUEST</button>
                                 </div>
                                 <p class="status" id="step-status-3" role="status" aria-live="polite"></p>
                             </form>
@@ -194,10 +174,10 @@
                         <section class="step-panel" data-step="4" aria-labelledby="step4-title" hidden>
                             <div class="confirm-card">
                                 <span class="confirm-mark" aria-hidden="true">✓</span>
-                                <h2 id="step4-title" tabindex="-1">Request received.</h2>
+                                <h2 id="step4-title" tabindex="-1">Sample request received.</h2>
                                 <p class="lede">Reference <b id="confirm-ref"
-                                        style="color:var(--text-accent)">LUN-000000</b>. The moon concierge confirms by
-                                    email within 24 hours. No payment is due now.</p>
+                                        style="color:var(--text-accent)">LUNAIRE-DEMO-2026-001</b>. This prototype does
+                                    not create a real reservation or send an email.</p>
                                 <dl>
                                     <dt>Guest</dt>
                                     <dd id="confirm-name">Guest</dd>
@@ -207,6 +187,8 @@
                                     <dd id="confirm-dates">Pending</dd>
                                     <dt>Total</dt>
                                     <dd id="confirm-total">Pending</dd>
+                                    <dt>Request method</dt>
+                                    <dd id="confirm-method">Conceptual request</dd>
                                 </dl>
                                 <div class="hero-cta"><a class="btn btn-ghost" href="index.html">Back to home</a></div>
                             </div>
@@ -234,9 +216,9 @@
                         <div class="booking-modal-panel">
                             <button class="booking-modal-close" type="button" aria-label="Close confirmation">×</button>
                             <div class="confirm-mark" aria-hidden="true">✓</div>
-                            <h2 id="booking-modal-title">Reservation confirmed</h2>
-                            <p class="lede">Your request has been received. The moon concierge will reach out within 24
-                                hours with the final confirmation details.</p>
+                            <h2 id="booking-modal-title">Sample request recorded</h2>
+                            <p class="lede">Your fictional reservation request has been recorded for demonstration only.
+                                No availability, payment, or real reservation was created.</p>
                             <dl class="booking-modal-details">
                                 <dt>Reference</dt>
                                 <dd id="modal-ref">LUN-000000</dd>
@@ -246,6 +228,8 @@
                                 <dd id="modal-dates">—</dd>
                                 <dt>Total</dt>
                                 <dd id="modal-total">PHP 0.00</dd>
+                                <dt>Request method</dt>
+                                <dd id="modal-method">Conceptual request</dd>
                             </dl>
                             <div class="hero-cta"><button class="btn btn-primary" id="modal-return-home"
                                     type="button">Return to home</button></div>

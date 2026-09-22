@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events — Lunaire Concept</title>
+    <meta name="description"
+        content="Explore fictional Lunaire event venues and send a conceptual gathering inquiry." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/png" href="logo-mark.png" />
+</head>
+
+<body>
+    <div class="loader" id="site-loader" role="status" aria-label="Loading Lunaire experience">
+        <div class="loader-inner"><span class="loader-moon" aria-hidden="true">☾</span>
+            <p class="loader-word">LUNAIRE</p>
+            <p class="loader-sub">Tagaytay · Fictional concept</p>
+            <div class="loader-bar" aria-hidden="true"><span></span></div>
+        </div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Lunaire home"><img
+                    class="brand-logo" src="logo.png" alt="Lunaire" width="78" height="48" /></a><button
+                class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Open menu">☰</button>
+            <nav class="nav" id="site-nav" aria-label="Primary"><a href="index.html">Stay</a><a
+                    href="rooms.html">Rooms</a><a href="dining.html">Dining</a><a
+                    href="wellness-recreation.html">Wellness &amp; Recreation</a><a
+                    href="experiences.html">Experiences</a><a href="events.html" aria-current="page">Events</a><a
+                    href="about.html">Our Story</a><a class="btn btn-primary" href="booking.html"
+                    style="min-height:44px;padding:.6rem 1.3rem">Reserve</a></nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="overline">Events · Conceptual venues</p>
+                <h1 class="h2">Gather beneath the moonlight.</h1>
+                <p class="lede">Imagine intimate celebrations, focused meetings, and warm evening gatherings in spaces
+                    designed around people and meaningful moments.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="card-grid">
+                    <article class="media-card"><img src="Celeste-Function-Room_.png"
+                            alt="Conceptual wedding celebration setting at Lunaire" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">Up to 80 guests · Conceptual</p>
+                            <h2>Celeste Function Room</h2>
+                            <p>Imagined for weddings, receptions, seminars, corporate gatherings, product presentations,
+                                and social events.</p>
+                            <div class="card-action"><a class="btn btn-ghost" href="events.html?venue=celeste#event-form">Inquire about Celeste</a></div>
+                        </div>
+                    </article>
+                    <article class="media-card"><img src="Moon-Garden-Event-Space_.png"
+                            alt="Conceptual intimate celebration setting at Lunaire" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">Up to 50 guests · Conceptual</p>
+                            <h2>Moon Garden</h2>
+                            <p>A fictional garden setting for dinners, intimate ceremonies, birthdays, engagement
+                                celebrations, and evening gatherings.</p>
+                            <div class="card-action"><a class="btn btn-ghost" href="events.html?venue=moon-garden#event-form">Inquire about Moon Garden</a></div>
+                        </div>
+                    </article>
+                    <article class="media-card"><img src="Lune-Boardroom_.png"
+                            alt="Conceptual meeting room prepared for a small gathering" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">Up to 12 guests · Conceptual</p>
+                            <h2>Lune Boardroom</h2>
+                            <p>A quiet meeting concept for executive discussions, strategy sessions, consultations, and
+                                small presentations.</p>
+                            <div class="card-action"><a class="btn btn-ghost" href="events.html?venue=boardroom#event-form">Inquire about Lune Boardroom</a></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="booking">
+                    <form id="event-form" novalidate>
+                        <p class="overline">Sample inquiry</p>
+                        <h2>Plan your gathering</h2>
+                        <p class="form-note">This form is for demonstration only. It does not contact a real venue.</p>
+                        <div class="field"><label for="event-name">Your name</label><input id="event-name" name="name"
+                                type="text" autocomplete="name" required /></div>
+                        <div class="field"><label for="event-email">Email</label><input id="event-email" name="email"
+                                type="email" autocomplete="email" required /></div>
+                        <div class="field"><label for="event-type">Event type</label><select id="event-type"
+                                name="eventType">
+                                <option>Private celebration</option>
+                                <option>Wedding or reception</option>
+                                <option>Corporate gathering</option>
+                                <option>Meeting or presentation</option>
+                            </select></div>
+                        <div class="field"><label for="event-date">Preferred date</label><input id="event-date"
+                                name="date" type="date" required /></div>
+                        <div class="field"><label for="event-guests">Expected guests</label><input id="event-guests"
+                                name="guests" type="number" min="1" max="80" required /></div>
+                        <div class="field"><label for="event-venue">Preferred venue</label><select id="event-venue"
+                                name="venue">
+                                <option>Celeste Function Room</option>
+                                <option>Moon Garden</option>
+                                <option>Lune Boardroom</option>
+                                <option>Not sure yet</option>
+                            </select></div>
+                        <div class="field"><label for="event-notes">Catering, equipment, styling, and other
+                                notes</label><textarea id="event-notes" name="notes" rows="4"></textarea></div><button
+                            class="btn btn-primary" type="submit">Send sample inquiry</button>
+                        <p class="status" id="event-status" role="status" aria-live="polite"></p>
+                    </form>
+                    <div>
+                        <h2>Thoughtful details</h2>
+                        <p class="lede">A real implementation could follow up about menus, equipment, styling
+                            preferences, accessibility, and availability. Every request would remain subject to
+                            confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="foot-base"><span>© 2026 Lunaire fictional website concept.</span><span>Where memories shine
+                    under the moonlight.</span></div>
+        </div>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+
+</html>

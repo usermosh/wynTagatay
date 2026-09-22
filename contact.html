@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reserve — Lunaire Tagaytay</title>
-  <meta name="description" content="Check availability at Lunaire Tagaytay. Tagaytay-Alfonso border, Cavite." />
+  <title>Contact — Lunaire Concept</title>
+  <meta name="description" content="Send a fictional Lunaire general inquiry, reservation, event, dining, wellness, or accessibility request." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -22,7 +22,7 @@
     <div class="loader-inner">
       <span class="loader-moon" aria-hidden="true">☾</span>
       <p class="loader-word">LUNAIRE</p>
-      <p class="loader-sub">Tagaytay · Est. 2023</p>
+      <p class="loader-sub">Tagaytay · Fictional concept</p>
       <div class="loader-bar" aria-hidden="true"><span></span></div>
     </div>
   </div>
@@ -42,9 +42,9 @@
   <main id="main">
     <section class="page-hero">
       <div class="wrap">
-        <p class="overline">Reserve</p>
-        <h1 class="h2">Check availability.</h1>
-        <p class="lede">Static demo form. Submissions are validated locally. Connect your booking provider later.</p>
+        <p class="overline">Contact · Conceptual inquiry</p>
+        <h1 class="h2">How may we help?</h1>
+        <p class="lede">Use this local demonstration form for a general, reservation, events, dining, wellness, accessibility, or transportation inquiry.</p>
       </div>
     </section>
     <section class="section">
@@ -55,25 +55,24 @@
                 autocomplete="name" required placeholder="Maria Santos" /></div>
             <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email"
                 autocomplete="email" required placeholder="you@example.com" /></div>
-            <div class="field"><label for="f-in">Check-in</label><input id="f-in" name="checkin" type="date" required />
+            <div class="field"><label for="f-inquiry">Inquiry type</label><select id="f-inquiry" name="inquiryType"><option>General inquiry</option><option>Reservations</option><option>Events and meetings</option><option>Dining</option><option>Wellness</option><option>Accessibility</option><option>Transportation assistance</option></select></div>
+            <div class="field"><label for="f-in">Preferred date (optional)</label><input id="f-in" name="checkin" type="date" />
             </div>
-            <div class="field"><label for="f-out">Check-out</label><input id="f-out" name="checkout" type="date"
-                required /></div>
-            <div class="field"><label for="f-room">Room</label><select id="f-room" name="room">
-                <option>Dusk Room</option>
-                <option>Moon Suite</option>
-                <option>Lunaire Signature Villa</option>
-              </select></div>
-            <div class="field"><label for="f-notes">Occasion (optional)</label><textarea id="f-notes" name="notes"
-                rows="3" placeholder="Anniversary, quiet weekend, proposal"></textarea></div>
-            <button class="btn btn-primary" type="submit">Request reservation</button>
+            <div class="field"><label for="f-notes">Message</label><textarea id="f-notes" name="notes"
+              rows="4" required placeholder="Tell us what you would like to explore."></textarea></div>
+            <label class="prototype-notice"><input type="checkbox" name="consent" required /> I understand this is a fictional prototype and my message will not be sent to a real team.</label>
+            <button class="btn btn-primary" type="submit">Send sample inquiry</button>
             <p class="status" id="booking-status" role="status" aria-live="polite"></p>
           </form>
           <div>
+            <figure class="editorial-image contact-image">
+              <img id="contact-context-image" src="dining-hall.png" alt="Conceptual Lunaire dining room with warm evening lights" loading="lazy" />
+              <figcaption id="contact-context-caption">A sample setting for thoughtful guest moments.</figcaption>
+            </figure>
             <h3 style="font-family:var(--font-display);color:var(--text-bright);font-size:1.8rem;margin-top:0">Visit
             </h3>
             <p style="color:var(--text-secondary)">Tagaytay–Alfonso border, Cavite, Philippines<br />Check-in from 2 PM
-              · Check-out at 12 NN<br />90 minutes from Metro Manila in light traffic.</p>
+              · Check-out at 12 NN<br />Conceptual location information only; no verified travel time is provided.</p>
             <p class="form-note">For events and buyouts, include your date and headcount in the occasion field.</p>
           </div>
         </div>
