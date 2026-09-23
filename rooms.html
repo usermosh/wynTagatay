@@ -2,140 +2,415 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rooms — Lunaire Tagaytay</title>
-  <meta name="description"
-    content="Dusk Room, Moon Suite, and Lunaire Signature Villa. Moonlit rooms and suites in Tagaytay." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="tokens.css" />
-  <link rel="stylesheet" href="main.css" />
-  <meta name="theme-color" content="#080d1a" />
-  <link rel="icon" type="image/png" href="logo-mark.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stay Under the Moonlight — Lunaire</title>
+    <meta name="description"
+        content="Discover Lunaire rooms and suites designed for comfort, privacy, and timeless elegance." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="theme-color" content="#080d1a" />
+    <link rel="icon" type="image/png" href="logo-mark.png" />
 </head>
 
 <body>
-  <div class="loader" id="site-loader" role="status" aria-label="Loading Lunaire experience">
-    <div class="loader-inner">
-      <span class="loader-moon" aria-hidden="true">☾</span>
-      <p class="loader-word">LUNAIRE</p>
-      <p class="loader-sub">Tagaytay · Fictional concept</p>
-      <div class="loader-bar" aria-hidden="true"><span></span></div>
-    </div>
-  </div>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Lunaire home"><img class="brand-logo" src="logo.png"
-          alt="Lunaire" width="78" height="48" /></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
-        aria-label="Open menu">☰</button>
-      <nav class="nav" id="site-nav" aria-label="Primary"><a href="index.html">Stay</a><a href="rooms.html"
-          aria-current="page">Rooms</a><a href="dining.html">Dining</a><a href="wellness-recreation.html">Wellness &amp;
-          Recreation</a><a href="entertainment-leisure.html">Entertainment &amp; Leisure</a><a href="about.html">Our
-          Story</a><a class="btn btn-primary" href="booking.html"
-          style="min-height:44px;padding:.6rem 1.3rem">Reserve</a></nav>
-    </div>
-  </header>
-  <main id="main">
-    <section class="page-hero">
-      <div class="wrap">
-        <p class="overline">Rooms and suites</p>
-        <h1 class="h2">Sleep deeply. Wake slowly.</h1>
-        <p class="lede">Seven conceptual room types designed for comfort, privacy, and quiet elegance. All rates are
-          fictional sample rates for this website prototype.</p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="wrap">
-        <div class="card-grid">
-          <figure class="media-card">
-            <img src="Lunaire-Classic-Room.png" alt="Lunaire Classic Room with warm lighting" loading="lazy"
-              onerror="this.classList.add('is-broken')" />
-            <div class="body">
-              <p class="overline">Classic Room · 28 sqm · Sleeps 2</p>
-              <h3>Lunaire Classic Room</h3>
-              <p>King or twin beds with a garden or city view. A refined room for comfort, simplicity, and quiet elegance.</p>
-              <p class="price">₱6,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=classic">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Lunaire-Deluxe-Room.png" alt="Lunaire Deluxe Room with warm textures" loading="lazy"
-              onerror="this.classList.add('is-broken')" />
-            <div class="body">
-              <p class="overline">Deluxe Room · 34 sqm · Sleeps 2</p>
-              <h3>Lunaire Deluxe Room</h3>
-              <p>A spacious king room with a garden or scenic view, warm textures, and room to unwind.</p>
-              <p class="price">₱7,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=deluxe">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Lunaire-Premier-Room-with-Taal-View_.png" alt="Lunaire Premier Room with scenic view" loading="lazy"
-              onerror="this.classList.add('is-broken')" />
-            <div class="body">
-              <p class="overline">Premier Room · 40 sqm · Sleeps 2</p>
-              <h3>Lunaire Premier Room</h3>
-              <p>A serene king room with scenic Tagaytay surroundings for guests who want to slow down and settle in.</p>
-              <p class="price">₱8,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=premier">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Lunaire-Junior-Suite_.png" alt="Lunaire Junior Suite with additional living space" loading="lazy" />
-            <div class="body">
-              <p class="overline">Junior Suite · 52 sqm · Sleeps 2–3</p>
-              <h3>Lunaire Junior Suite</h3>
-              <p>A graceful king suite with additional living space for romantic escapes, longer stays, and celebrations.</p>
-              <p class="price">₱10,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=junior">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Executive-Suite_.png" alt="Lunaire Executive Suite with space to relax and work" loading="lazy" />
-            <div class="body">
-              <p class="overline">Executive Suite · 68 sqm · Sleeps 2–3</p>
-              <h3>Lunaire Executive Suite</h3>
-              <p>A sophisticated king suite with thoughtful spaces for rest, work, and a more immersive stay.</p>
-              <p class="price">₱13,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=executive">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Moonlight-Suite.png" alt="Moonlight Suite with panoramic view and private balcony concept" loading="lazy" />
-            <div class="body">
-              <p class="overline">Signature Suite · 90 sqm · Sleeps 2</p>
-              <h3>Moonlight Suite</h3>
-              <p>The signature suite concept with panoramic scenery, expansive space, and a private balcony concept.</p>
-              <p class="price">₱17,500 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=moonlight">View room details</a></p>
-            </div>
-          </figure>
-          <figure class="media-card">
-            <img src="Family-Experience_.png" alt="Conceptual family connecting rooms with flexible bed arrangement" loading="lazy" />
-            <div class="body">
-              <p class="overline">Family Concept · 56 sqm · Sleeps 4</p>
-              <h3>Family / Connecting Rooms</h3>
-              <p>A flexible king-and-twin arrangement for families or small groups who want comfort and personal space.</p>
-              <p class="price">₱12,000 <span style="font-size:.9rem;color:var(--text-secondary)">/ sample night</span></p>
-              <p><a class="btn btn-ghost" href="room-detail.html?room=family">View room details</a></p>
-            </div>
-          </figure>
+    <div class="loader" id="site-loader" role="status" aria-label="Loading Lunaire experience">
+        <div class="loader-inner"><span class="loader-moon" aria-hidden="true">☾</span>
+            <p class="loader-word">LUNAIRE</p>
+            <p class="loader-sub">Tagaytay · Boutique Hotel Resort</p>
+            <div class="loader-bar" aria-hidden="true"><span></span></div>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap">
-      <div class="foot-base"><span>© 2026 Lunaire Boutique Hotel Resort.</span><span>Where memories shine under the
-          moonlight.</span></div>
     </div>
-  </footer>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Lunaire home"><img
+                    class="brand-logo" src="logo.png" alt="Lunaire" width="78" height="48" /></a><button
+                class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Open menu">☰</button>
+            <nav class="nav" id="site-nav" aria-label="Primary"></nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="overline">Stay</p>
+                <h1 class="h2">Stay Under the Moonlight</h1>
+                <p class="lede">Discover rooms and suites thoughtfully designed for comfort, privacy, and timeless
+                    elegance. Choose the stay that fits your journey.</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="card-grid">
+                    <article class="media-card room-card"><img src="Lunaire-Classic-Room.png" alt="Lunaire Classic Room"
+                            loading="lazy" />
+                        <div class="body">
+                            <p class="overline">01 · Accessible Luxury</p>
+                            <h2>Lunaire Classic Room</h2>
+                            <p><b>Recommended for:</b> Solo travelers and couples</p>
+                            <p><b>28 sqm · 2 guests · 1 King Bed or 2 Twin Beds · Garden / City View</b></p>
+                            <p>A comfortable and elegant retreat for guests seeking the signature Lunaire atmosphere at
+                                an accessible price. Designed with warm lighting, refined furnishings, and everything
+                                needed for a peaceful stay.</p>
+                            <details>
+                                <summary>In-Room Amenities</summary>
+                                <ul>
+                                    <li>King/Twin Bed</li>
+                                    <li>Smart TV</li>
+                                    <li>Work Desk</li>
+                                    <li>Air Conditioning</li>
+                                    <li>Mini Refrigerator</li>
+                                    <li>Coffee &amp; Tea Station</li>
+                                    <li>In-Room Safe</li>
+                                    <li>Hair Dryer</li>
+                                    <li>Premium Bath Amenities</li>
+                                    <li>High-Speed Wi-Fi</li>
+                                    <li>Wardrobe and Luggage Space</li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary>Included Services</summary>
+                                <ul>
+                                    <li>Daily Housekeeping</li>
+                                    <li>24-Hour Guest Assistance</li>
+                                    <li>Complimentary Wi-Fi</li>
+                                    <li>Basic Welcome Amenities</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱6,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=classic">VIEW
+                                    ROOM</a><a class="btn btn-primary" href="booking.html?room=classic">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Lunaire-Deluxe-Room.png" alt="Lunaire Deluxe Room"
+                            loading="lazy" />
+                        <div class="body">
+                            <p class="overline">02 · Enhanced Luxury</p>
+                            <h2>Lunaire Deluxe Room</h2>
+                            <p><b>Recommended for:</b> Couples and leisure travelers</p>
+                            <p><b>34 sqm · 2 guests · King Bed · Garden / Scenic View</b></p>
+                            <p>A more spacious retreat offering enhanced comfort and upgraded amenities. The Deluxe Room
+                                balances refined design with a calm, intimate atmosphere.</p>
+                            <details>
+                                <summary>In-Room Amenities</summary>
+                                <ul>
+                                    <li>King Bed</li>
+                                    <li>Rainfall Shower</li>
+                                    <li>Smart TV</li>
+                                    <li>Seating Area</li>
+                                    <li>Mini Bar</li>
+                                    <li>Coffee Machine</li>
+                                    <li>Premium Bath Amenities</li>
+                                    <li>In-Room Safe</li>
+                                    <li>Work Desk</li>
+                                    <li>High-Speed Wi-Fi</li>
+                                    <li>Enhanced View</li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary>Included Services</summary>
+                                <ul>
+                                    <li>Daily Housekeeping</li>
+                                    <li>Turndown Service</li>
+                                    <li>Welcome Amenities</li>
+                                    <li>24-Hour Guest Assistance</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱7,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=deluxe">VIEW
+                                    ROOM</a><a class="btn btn-primary" href="booking.html?room=deluxe">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Lunaire-Premier-Room-with-Taal-View_.png"
+                            alt="Lunaire Premier Room" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">03 · Premium Luxury</p>
+                            <h2>Lunaire Premier Room</h2>
+                            <p><b>Recommended for:</b> Couples, business travelers, and special occasions</p>
+                            <p><b>40 sqm · 2 guests · King Bed · Scenic Tagaytay View</b></p>
+                            <p>A refined retreat for guests seeking additional space, premium amenities, and an elevated
+                                level of comfort.</p>
+                            <details>
+                                <summary>In-Room Amenities</summary>
+                                <ul>
+                                    <li>King Bed</li>
+                                    <li>Sitting Area</li>
+                                    <li>Premium Bathroom</li>
+                                    <li>Bathtub</li>
+                                    <li>Work Area</li>
+                                    <li>Mini Bar</li>
+                                    <li>Coffee Machine</li>
+                                    <li>Premium Toiletries</li>
+                                    <li>Smart TV</li>
+                                    <li>In-Room Safe</li>
+                                    <li>Scenic View</li>
+                                    <li>Welcome Amenities</li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary>Included Services</summary>
+                                <ul>
+                                    <li>Daily Housekeeping</li>
+                                    <li>Turndown Service</li>
+                                    <li>Priority Guest Assistance</li>
+                                    <li>Welcome Refreshments</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱8,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=premier">VIEW
+                                    ROOM</a><a class="btn btn-primary" href="booking.html?room=premier">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Lunaire-Junior-Suite_.png"
+                            alt="Lunaire Junior Suite" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">04 · Suite Collection</p>
+                            <h2>Lunaire Junior Suite</h2>
+                            <p><b>Recommended for:</b> Couples and longer stays</p>
+                            <p><b>52 sqm · 2–3 guests · King Bed · Scenic View</b></p>
+                            <p>A spacious suite featuring a dedicated living area for guests seeking more room to relax,
+                                unwind, and reconnect.</p>
+                            <details>
+                                <summary>Features</summary>
+                                <ul>
+                                    <li>King Bed</li>
+                                    <li>Separate Living Area</li>
+                                    <li>Sofa</li>
+                                    <li>Dining/Seating Area</li>
+                                    <li>Premium Bathroom</li>
+                                    <li>Bathtub</li>
+                                    <li>Mini Bar</li>
+                                    <li>Coffee Machine</li>
+                                    <li>Premium Toiletries</li>
+                                    <li>Smart TV</li>
+                                    <li>Scenic View</li>
+                                    <li>Welcome Amenities</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱10,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=junior">VIEW
+                                    SUITE</a><a class="btn btn-primary" href="booking.html?room=junior">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Executive-Suite_.png" alt="Lunaire Executive Suite"
+                            loading="lazy" />
+                        <div class="body">
+                            <p class="overline">05 · Executive Collection</p>
+                            <h2>Lunaire Executive Suite</h2>
+                            <p><b>Recommended for:</b> VIPs, business travelers, and celebrations</p>
+                            <p><b>68 sqm · 2–3 guests · King Bed · Panoramic Scenic View</b></p>
+                            <p>A spacious private retreat designed around comfort, privacy, and personalized service.
+                            </p>
+                            <details>
+                                <summary>Features</summary>
+                                <ul>
+                                    <li>Separate Bedroom</li>
+                                    <li>Living Room</li>
+                                    <li>Dining Area</li>
+                                    <li>Work Area</li>
+                                    <li>Premium Bathroom</li>
+                                    <li>Bathtub</li>
+                                    <li>Walk-In Closet</li>
+                                    <li>Mini Bar</li>
+                                    <li>Coffee Machine</li>
+                                    <li>Premium Toiletries</li>
+                                    <li>Large Smart TV</li>
+                                    <li>Scenic View</li>
+                                    <li>Personalized Welcome Amenities</li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary>Included Services</summary>
+                                <ul>
+                                    <li>Priority Concierge Assistance</li>
+                                    <li>Turndown Service</li>
+                                    <li>Welcome Amenities</li>
+                                    <li>Complimentary Evening Refreshments</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱13,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=executive">VIEW
+                                    SUITE</a><a class="btn btn-primary" href="booking.html?room=executive">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Moonlight-Suite.png" alt="Moonlight Suite"
+                            loading="lazy" />
+                        <div class="body">
+                            <p class="overline">06 · Lunaire Signature Collection</p>
+                            <h2>Moonlight Suite</h2>
+                            <p><b>Our Most Exclusive Stay</b></p>
+                            <p><b>90 sqm · 2 guests · King Bed · Panoramic Tagaytay View</b></p>
+                            <p>Our signature accommodation, created for guests seeking the most luxurious and memorable
+                                Lunaire experience. Designed with expansive living spaces, a private balcony, refined
+                                finishes, and intimate nighttime ambiance.</p>
+                            <details>
+                                <summary>Features</summary>
+                                <ul>
+                                    <li>King Bed</li>
+                                    <li>Large Separate Living Room</li>
+                                    <li>Private Balcony</li>
+                                    <li>Panoramic View</li>
+                                    <li>Freestanding Bathtub</li>
+                                    <li>Premium Bathroom</li>
+                                    <li>Walk-In Closet</li>
+                                    <li>Private Dining Area</li>
+                                    <li>Mini Bar</li>
+                                    <li>Coffee Machine</li>
+                                    <li>Premium Toiletries</li>
+                                    <li>Large Smart TV</li>
+                                    <li>Personalized Welcome Setup</li>
+                                    <li>Luxury Bathrobes and Slippers</li>
+                                </ul>
+                            </details>
+                            <details>
+                                <summary>Signature Privileges</summary>
+                                <ul>
+                                    <li>Priority Concierge Assistance</li>
+                                    <li>Turndown Service</li>
+                                    <li>Complimentary Welcome Amenities</li>
+                                    <li>Evening Refreshments</li>
+                                    <li>Private Dining Arrangement Upon Request</li>
+                                    <li>Moonlight Experience Inclusion</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱17,500 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=moonlight">VIEW
+                                    SUITE</a><a class="btn btn-primary" href="booking.html?room=moonlight">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="media-card room-card"><img src="Family-Experience_.png"
+                            alt="Family and connecting rooms" loading="lazy" />
+                        <div class="body">
+                            <p class="overline">07 · Comfort for Togetherness</p>
+                            <h2>Family / Connecting Rooms</h2>
+                            <p><b>Recommended for:</b> Families and small groups</p>
+                            <p><b>56 sqm combined · 4 guests · King + Twin Beds · Garden / Scenic View</b></p>
+                            <p>Flexible accommodation designed for families and small groups who want to stay together
+                                while maintaining personal space.</p>
+                            <details>
+                                <summary>Features</summary>
+                                <ul>
+                                    <li>Connecting Rooms</li>
+                                    <li>King + Twin Beds</li>
+                                    <li>Two Bathrooms</li>
+                                    <li>Smart TVs</li>
+                                    <li>Mini Refrigerator</li>
+                                    <li>Coffee &amp; Tea Station</li>
+                                    <li>Safe</li>
+                                    <li>Wi-Fi</li>
+                                    <li>Premium Bath Amenities</li>
+                                </ul>
+                            </details>
+                            <p class="price">₱12,000 <small>/night</small></p>
+                            <div class="hero-cta"><a class="btn btn-ghost" href="room-detail.html?room=family">VIEW
+                                    ROOM</a><a class="btn btn-primary" href="booking.html?room=family">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="prose">
+                    <p class="overline">Room comparison</p>
+                    <h2 class="h2">Find the stay that fits your journey.</h2>
+                    <div style="overflow-x:auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Room</th>
+                                    <th>Size</th>
+                                    <th>Guests</th>
+                                    <th>Bed</th>
+                                    <th>View</th>
+                                    <th>Starting Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Classic</td>
+                                    <td>28 sqm</td>
+                                    <td>2</td>
+                                    <td>King/Twin</td>
+                                    <td>Garden/City</td>
+                                    <td>₱6,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Deluxe</td>
+                                    <td>34 sqm</td>
+                                    <td>2</td>
+                                    <td>King</td>
+                                    <td>Garden/Scenic</td>
+                                    <td>₱7,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Premier</td>
+                                    <td>40 sqm</td>
+                                    <td>2</td>
+                                    <td>King</td>
+                                    <td>Scenic</td>
+                                    <td>₱8,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Junior Suite</td>
+                                    <td>52 sqm</td>
+                                    <td>2–3</td>
+                                    <td>King</td>
+                                    <td>Scenic</td>
+                                    <td>₱10,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Executive Suite</td>
+                                    <td>68 sqm</td>
+                                    <td>2–3</td>
+                                    <td>King</td>
+                                    <td>Panoramic</td>
+                                    <td>₱13,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Moonlight Suite</td>
+                                    <td>90 sqm</td>
+                                    <td>2</td>
+                                    <td>King</td>
+                                    <td>Panoramic</td>
+                                    <td>₱17,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Family/Connecting</td>
+                                    <td>56 sqm</td>
+                                    <td>4</td>
+                                    <td>King + Twin</td>
+                                    <td>Garden/Scenic</td>
+                                    <td>₱12,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="form-note">Rates shown are sample concept rates and may vary depending on dates, packages,
+                        and availability.</p>
+                    <p><a class="btn btn-primary" href="booking.html">BOOK NOW</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="foot-base"><span>© 2026 Lunaire Boutique Hotel Resort.</span><span>Where memories shine under
+                    the moonlight.</span></div>
+        </div>
+    </footer>
     <script src="main.js" defer></script>
 </body>
 

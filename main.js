@@ -34,8 +34,88 @@
         }
     }
 
+    window.LUNAIRE_CONTENT = window.LUNAIRE_CONTENT || {
+        rooms: {
+            classic: {
+                name: 'Lunaire Classic Room',
+                category: 'Accessible Luxury',
+                recommendedFor: 'Solo travelers and couples',
+                size: '28 sqm',
+                capacity: '2 guests',
+                bed: '1 King Bed or 2 Twin Beds',
+                view: 'Garden / City View',
+                price: '₱6,500/night',
+                description: 'A comfortable and elegant retreat for guests seeking the signature Lunaire atmosphere at an accessible price. Designed with warm lighting, refined furnishings, and everything needed for a peaceful stay.',
+                amenities: ['King/Twin Bed', 'Smart TV', 'Work Desk', 'Air Conditioning', 'Mini Refrigerator', 'Coffee & Tea Station', 'In-Room Safe', 'Hair Dryer', 'Premium Bath Amenities', 'High-Speed Wi-Fi', 'Wardrobe and Luggage Space'],
+                includedServices: ['Daily Housekeeping', '24-Hour Guest Assistance', 'Complimentary Wi-Fi', 'Basic Welcome Amenities'],
+                image: 'Lunaire-Classic-Room.png'
+            },
+            deluxe: {
+                name: 'Lunaire Deluxe Room',
+                size: '34 sqm',
+                capacity: 'Up to 2 guests',
+                bed: 'King bed',
+                view: 'Garden or scenic view',
+                price: 'PHP 7,500 per sample night',
+                description: 'A spacious retreat with warm textures, restful surroundings, and room to unwind.',
+                image: 'Lunaire-Deluxe-Room.png'
+            },
+            premier: {
+                name: 'Lunaire Premier Room',
+                size: '40 sqm',
+                capacity: 'Up to 2 guests',
+                bed: 'King bed',
+                view: 'Scenic Tagaytay view',
+                price: 'PHP 8,500 per sample night',
+                description: 'A serene room for guests who want to slow down and settle into a more immersive stay.',
+                image: 'Lunaire-Premier-Room-with-Taal-View_.png'
+            },
+            junior: {
+                name: 'Lunaire Junior Suite',
+                size: '52 sqm',
+                capacity: 'Up to 2–3 guests',
+                bed: 'King bed',
+                view: 'Scenic view',
+                price: 'PHP 10,500 per sample night',
+                description: 'A graceful suite with additional living space for romantic escapes, longer stays, and celebrations.',
+                image: 'Lunaire-Junior-Suite_.png'
+            },
+            executive: {
+                name: 'Lunaire Executive Suite',
+                size: '68 sqm',
+                capacity: 'Up to 2–3 guests',
+                bed: 'King bed',
+                view: 'Panoramic view',
+                price: 'PHP 13,500 per sample night',
+                description: 'A sophisticated suite designed for rest, work, and a more immersive stay.',
+                image: 'Executive-Suite_.png'
+            },
+            moonlight: {
+                name: 'Moonlight Suite',
+                size: '90 sqm',
+                capacity: 'Up to 2 guests',
+                bed: 'King bed',
+                view: 'Panoramic Tagaytay view',
+                price: 'PHP 17,500 per sample night',
+                description: 'The signature suite concept with expansive space, panoramic scenery, and a private balcony concept.',
+                image: 'Moonlight-Suite.png'
+            },
+            family: {
+                name: 'Family / Connecting Rooms',
+                size: '56 sqm combined',
+                capacity: 'Up to 4 guests',
+                bed: 'King bed plus twin beds',
+                view: 'Flexible family layout',
+                price: 'PHP 12,000 per sample night',
+                description: 'A flexible accommodation concept for families or small groups who want comfort and personal space.',
+                image: 'Family-Experience_.png'
+            }
+        }
+    };
+
     function initDynamic() {
         normalizePrimaryNav();
+        initCardExpanders();
         initRoomDetail();
         initContactForm();
         initContactContext();
@@ -43,52 +123,83 @@
         initBookingIfNeeded();
     }
 
+    function initCardExpanders() {
+        document.querySelectorAll('a').forEach(function (link) {
+            if (link.textContent.trim().toUpperCase() !== 'SEE MORE') return;
+            var parent = link.parentElement;
+            if (parent && parent.tagName === 'P' && parent.children.length === 1) parent.remove();
+            else link.remove();
+        });
+
+        var fallbackActions = {
+            'Moonlight Lounge': ['RESERVE A TABLE', 'contact.html?context=dining'],
+            'Romantic Getaway': ['BOOK PACKAGE', 'offers.html#romantic']
+        };
+        document.querySelectorAll('#main article.media-card').forEach(function (card) {
+            if (card.querySelector('a.btn')) return;
+            var heading = card.querySelector('h2, h3');
+            var action = heading && fallbackActions[heading.textContent.trim()];
+            if (!action) return;
+            var wrapper = document.createElement('p');
+            wrapper.className = 'card-action';
+            var link = document.createElement('a');
+            link.className = 'btn btn-primary';
+            link.href = action[1];
+            link.textContent = action[0];
+            wrapper.appendChild(link);
+            card.querySelector('.body').appendChild(wrapper);
+        });
+    }
+
     function initRoomDetail() {
         var title = document.getElementById('room-title');
         if (!title) return;
-        var rooms = {
-            classic: ['Lunaire Classic Room', '28 sqm', 'Up to 2 guests', 'King or twin beds', 'Garden or city view', 'PHP 6,500 per sample night', 'A refined and welcoming room for guests who value comfort, simplicity, and quiet elegance.', 'Lunaire-Classic-Room.png'],
-            deluxe: ['Lunaire Deluxe Room', '34 sqm', 'Up to 2 guests', 'King bed', 'Garden or scenic view', 'PHP 7,500 per sample night', 'A spacious retreat with warm textures, restful surroundings, and room to unwind.', 'Lunaire-Deluxe-Room.png'],
-            premier: ['Lunaire Premier Room', '40 sqm', 'Up to 2 guests', 'King bed', 'Scenic Tagaytay view', 'PHP 8,500 per sample night', 'A serene room for guests who want to slow down and settle into a more immersive stay.', 'Lunaire-Premier-Room-with-Taal-View_.png'],
-            junior: ['Lunaire Junior Suite', '52 sqm', 'Up to 2–3 guests', 'King bed', 'Scenic view', 'PHP 10,500 per sample night', 'A graceful suite with additional living space for romantic escapes, longer stays, and celebrations.', 'Lunaire-Junior-Suite_.png'],
-            executive: ['Lunaire Executive Suite', '68 sqm', 'Up to 2–3 guests', 'King bed', 'Panoramic view', 'PHP 13,500 per sample night', 'A sophisticated suite designed for rest, work, and a more immersive stay.', 'Executive-Suite_.png'],
-            moonlight: ['Moonlight Suite', '90 sqm', 'Up to 2 guests', 'King bed', 'Panoramic Tagaytay view', 'PHP 17,500 per sample night', 'The signature suite concept with expansive space, panoramic scenery, and a private balcony concept.', 'Moonlight-Suite.png'],
-            family: ['Family / Connecting Rooms', '56 sqm combined', 'Up to 4 guests', 'King bed plus twin beds', 'Flexible family layout', 'PHP 12,000 per sample night', 'A flexible accommodation concept for families or small groups who want comfort and personal space.', 'Family-Experience_.png']
-        };
+        var rooms = window.LUNAIRE_CONTENT.rooms;
         var key = new URLSearchParams(window.location.search).get('room') || 'classic';
         var room = rooms[key] || rooms.classic;
-        title.textContent = room[0];
-        document.getElementById('room-intro').textContent = room[6];
-        document.getElementById('room-size').textContent = room[1];
-        document.getElementById('room-capacity').textContent = room[2];
-        document.getElementById('room-bed').textContent = room[3];
-        document.getElementById('room-view').textContent = room[4];
-        document.getElementById('room-price').textContent = room[5];
-        document.getElementById('room-description').textContent = room[6];
+        title.textContent = room.name;
+        document.getElementById('room-intro').textContent = room.description;
+        document.getElementById('room-size').textContent = room.size;
+        document.getElementById('room-capacity').textContent = room.capacity;
+        document.getElementById('room-bed').textContent = room.bed;
+        document.getElementById('room-view').textContent = room.view;
+        document.getElementById('room-price').textContent = room.price;
+        document.getElementById('room-description').textContent = room.description;
+        var category = document.getElementById('room-category');
+        var recommended = document.getElementById('room-recommended');
+        if (category) category.textContent = room.category || 'Lunaire Collection';
+        if (recommended) recommended.textContent = room.recommendedFor || 'Guests seeking a restorative escape';
+        renderRoomList('room-amenities', room.amenities);
+        renderRoomList('room-services', room.includedServices);
         var image = document.getElementById('room-image');
-        image.src = room[7];
-        image.alt = 'Conceptual ' + room[0];
+        image.src = room.image;
+        image.alt = room.name;
+    }
+
+    function renderRoomList(id, items) {
+        var list = document.getElementById(id);
+        if (!list || !items) return;
+        list.innerHTML = '';
+        items.forEach(function (item) {
+            var entry = document.createElement('li');
+            entry.textContent = item;
+            list.appendChild(entry);
+        });
     }
 
     function normalizePrimaryNav() {
         if (!nav) return;
         var current = window.location.pathname.split('/').pop() || 'index.html';
         var links = [
-            ['index.html', 'Stay'],
-            ['rooms.html', 'Rooms'],
+            ['index.html', 'Home'],
+            ['rooms.html', 'Stay'],
             ['dining.html', 'Dine'],
             ['wellness-recreation.html', 'Relax'],
-            ['entertainment-leisure.html', 'Entertainment & Leisure'],
             ['experiences.html', 'Experience'],
             ['events.html', 'Events'],
             ['offers.html', 'Offers'],
-            ['about.html', 'About'],
-            ['guest-services.html', 'Guest Services'],
             ['gallery.html', 'Gallery'],
-            ['location.html', 'Location'],
-            ['faq.html', 'FAQ'],
-            ['policies.html', 'Policies'],
-            ['contact.html', 'Contact']
+            ['guest-services.html', 'Guest Services']
         ];
         nav.innerHTML = '';
         links.forEach(function (item) {
@@ -101,7 +212,7 @@
         var book = document.createElement('a');
         book.className = 'btn btn-primary';
         book.href = 'booking.html';
-        book.textContent = 'Book Your Stay';
+        book.textContent = 'Book Now';
         if (current === 'booking.html') book.setAttribute('aria-current', 'page');
         nav.appendChild(book);
     }
