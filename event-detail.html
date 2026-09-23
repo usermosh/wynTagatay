@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Detail — Lunaire Boutique Hotel</title>
+  <meta name="description" content="Explore Lunaire event venues and facilities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div class="loader" id="site-loader" role="status" aria-label="Loading Lunaire experience">
+    <div class="loader-inner"><span class="loader-moon" aria-hidden="true">☾</span><p class="loader-word">LUNAIRE</p><p class="loader-sub">Tagaytay · Boutique Hotel Resort</p><div class="loader-bar" aria-hidden="true"><span></span></div></div>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Lunaire home"><img class="brand-logo" src="logo.png" alt="Lunaire" width="78" height="48" /></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button><nav class="nav" id="site-nav" aria-label="Primary"></nav></div></header>
+  <main id="main">
+    <section class="page-hero"><div class="wrap"><p class="overline" id="event-kicker">Lunaire Events</p><h1 class="h2" id="event-title">Celeste Function Room</h1><p class="lede" id="event-intro">Elegant gatherings, thoughtfully designed.</p></div></section>
+    <section class="section"><div class="wrap split"><div><img id="event-image" class="room-detail-image" src="Celeste-Function-Room_.png" alt="Celeste Function Room" /></div><div class="prose"><p class="overline" id="event-capacity">Capacity: Up to 80 guests</p><h2>Event overview</h2><dl class="room-facts"><dt>Ideal for</dt><dd id="event-ideal">Birthdays, reunions, corporate meetings, private dinners, and small weddings.</dd><dt>Facilities</dt><dd id="event-facilities">Audio-visual equipment, Wi-Fi, projector, flexible seating, catering, and event coordination.</dd></dl><h2>Description</h2><p id="event-description">Create a polished and memorable gathering in a setting designed around thoughtful details.</p><div class="hero-cta"><a class="btn btn-primary" id="event-action" href="events.html?venue=celeste#event-form">Inquire about this venue</a><a class="btn btn-ghost" href="events.html">View all events</a></div></div></div></section>
+  </main>
+  <footer><div class="wrap"><div class="foot-base"><span>© 2026 Lunaire Boutique Hotel Resort.</span><span>Where memories shine under the moonlight.</span></div></div></footer>
+  <script src="main.js" defer></script>
+  <script>
+    (function () {
+      var venues = {
+        celeste: { title: 'Celeste Function Room', image: 'Celeste-Function-Room_.png', capacity: 'Capacity: Up to 80 guests', ideal: 'Birthdays, reunions, corporate meetings, private dinners, and small weddings.', facilities: 'Audio-visual equipment, Wi-Fi, projector, flexible seating, catering, and event coordination.', description: 'Elegant gatherings, thoughtfully designed for celebrations and polished events.', action: 'Inquire about Celeste' },
+        'moon-garden': { title: 'Moon Garden', image: 'Moon-Garden-Event-Space_.png', capacity: 'Capacity: Up to 50 guests', ideal: 'Proposals, intimate weddings, garden dinners, birthdays, and private celebrations.', facilities: 'Fairy lighting, dining setup, floral styling, music, and private catering.', description: 'Celebrate beneath the evening sky in a garden setting shaped for luminous memories.', action: 'Plan a garden event' },
+        boardroom: { title: 'Lune Boardroom', image: 'Lune-Boardroom_.png', capacity: 'Capacity: 12 guests', ideal: 'Executive meetings, small workshops, business discussions, and private consultations.', facilities: 'Large display, whiteboard, Wi-Fi, coffee and tea service, and business support.', description: 'A refined setting for focused meetings, private consultations, and thoughtful business gatherings.', action: 'Book the boardroom' }
+      };
+      var key = new URLSearchParams(window.location.search).get('venue') || 'celeste';
+      var venue = venues[key] || venues.celeste;
+      document.getElementById('event-title').textContent = venue.title;
+      document.getElementById('event-image').src = venue.image;
+      document.getElementById('event-image').alt = venue.title;
+      document.getElementById('event-capacity').textContent = venue.capacity;
+      document.getElementById('event-ideal').textContent = venue.ideal;
+      document.getElementById('event-facilities').textContent = venue.facilities;
+      document.getElementById('event-description').textContent = venue.description;
+      var action = document.getElementById('event-action');
+      action.textContent = venue.action;
+      action.href = 'events.html?venue=' + key + '#event-form';
+    }());
+  </script>
+</body>
+</html>

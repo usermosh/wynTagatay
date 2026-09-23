@@ -525,23 +525,23 @@ h3 {
 
 .tile-hero {
   grid-row: span 2;
-  background: linear-gradient(rgba(4, 6, 12, 0.25), rgba(4, 6, 12, 0.78)), url('room-villa.png') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.25), rgba(4, 6, 12, 0.78)), url('Moonlight-Suite.png') center / cover, var(--surface-card);
 }
 
 .tile-2 {
-  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('dining-hall.png') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('Moonlight-Lounge.png') center / cover, var(--surface-card);
 }
 
 .tile-3 {
-  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('pool.png') center / cover, var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.55), rgba(4, 6, 12, 0.82)), url('Moonlit-Pool.png') center / cover, var(--surface-card);
 }
 
 .tile-4 {
-  background: var(--surface-deep);
+  background: linear-gradient(rgba(4, 6, 12, 0.45), rgba(4, 6, 12, 0.84)), url('Private-Cinema-Night_.png') center / cover, var(--surface-card);
 }
 
 .tile-5 {
-  background: linear-gradient(160deg, rgba(201, 168, 106, 0.14), transparent 55%), var(--surface-card);
+  background: linear-gradient(rgba(4, 6, 12, 0.45), rgba(4, 6, 12, 0.84)), url('Moon-Garden-Event-Space_.png') center / cover, var(--surface-card);
 }
 
 .tile kbd,
@@ -666,7 +666,7 @@ h3 {
 }
 
 .band-media {
-  background: linear-gradient(rgba(4, 6, 12, 0.15), rgba(4, 6, 12, 0.6)), url('garden.png') center / cover, var(--night-700);
+  background: linear-gradient(rgba(4, 6, 12, 0.15), rgba(4, 6, 12, 0.6)), url('Taal-Lake-and-Taal-Volcano-Panorama.png') center / cover, var(--night-700);
   min-height: 320px;
 }
 
@@ -839,11 +839,152 @@ footer {
   background: radial-gradient(800px 340px at 20% 0%, rgba(201, 168, 106, 0.12), transparent 60%), var(--surface-deep);
 }
 
+.about-page .page-hero {
+  background:
+    radial-gradient(700px 340px at 18% 0%, rgba(201, 168, 106, 0.18), transparent 62%),
+    linear-gradient(135deg, var(--surface-deep), var(--surface-page));
+}
+
+.about-story-grid {
+  align-items: center;
+}
+
+.about-story .editorial-image {
+  margin-top: 1.25rem;
+}
+
+.about-philosophy {
+  background: var(--surface-deep);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.about-philosophy .editorial-inner {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.about-philosophy .h2 {
+  margin-inline: auto;
+}
+
+.about-philosophy blockquote {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.about-principles {
+  background: var(--surface-page);
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.principle-grid,
+.welcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.principle-card,
+.welcome-card {
+  padding: 1.6rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card), inset 0 1px 0 var(--border-highlight);
+}
+
+.principle-card h3,
+.welcome-card h3 {
+  color: var(--text-bright);
+}
+
+.principle-card p:last-child,
+.welcome-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.values-heading {
+  margin-top: 4rem;
+}
+
+.about-principles .luna-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.about-principles .luna-list li {
+  grid-template-columns: 56px 1fr;
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+.about-welcome {
+  background: var(--surface-deep);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.about-welcome .section-heading {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-welcome .h2 {
+  margin-inline: auto;
+}
+
+.welcome-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.1rem;
   margin-top: 2rem;
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.gallery-grid .media-card img {
+  aspect-ratio: 4 / 3;
+}
+
+.guest-services-grid {
+  align-items: stretch;
+}
+
+.guest-services-grid > .media-card {
+  align-self: stretch;
+  height: 100%;
+}
+
+.guest-services-grid > .media-card .body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.guest-services-grid .card-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.guest-services-grid .card-action .btn {
+  width: 100%;
 }
 
 .card {
@@ -890,6 +1031,10 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  .welcome-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .foot-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -926,6 +1071,12 @@ footer {
 
   .bento,
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-principles .luna-list,
+  .principle-grid,
+  .welcome-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1001,6 +1152,36 @@ footer {
 .media-card .card-action {
   margin-top: auto;
   padding-top: 1.25rem;
+}
+
+.card-grid > .media-card {
+  align-self: start;
+}
+
+.card-grid > .media-card .body {
+  flex: none;
+}
+
+.room-card {
+  align-self: stretch;
+}
+
+.room-card .body {
+  flex: 1;
+}
+
+.room-card .hero-cta {
+  align-items: stretch;
+  margin-top: auto;
+}
+
+.card-grid > .room-card {
+  align-self: stretch;
+  height: 100%;
+}
+
+.card-grid > .room-card .body {
+  flex: 1;
 }
 
 .card .card-action {

@@ -46,14 +46,6 @@
           <div class="book-flow">
             <section class="step-panel is-active" data-step="1" aria-labelledby="step1-title">
               <h2 id="step1-title" tabindex="-1">Step 1 — Search</h2>
-              <div class="date-fields">
-                <div class="field"><label for="f-checkin">Check-In</label><input id="f-checkin" type="text" readonly placeholder="Select date" /></div>
-                <div class="field"><label for="f-checkout">Check-Out</label><input id="f-checkout" type="text" readonly placeholder="Select date" /></div>
-                <div class="field"><label for="f-adults">Adults</label><select id="f-adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
-                <div class="field"><label for="f-children">Children</label><select id="f-children"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
-                <div class="field"><label for="f-room-type">Room Type</label><select id="f-room-type"><option value="classic">Lunaire Classic Room</option><option value="deluxe">Lunaire Deluxe Room</option><option value="premier">Lunaire Premier Room</option><option value="junior">Lunaire Junior Suite</option><option value="executive">Lunaire Executive Suite</option><option value="moonlight">Moonlight Suite</option><option value="family">Family / Connecting Rooms</option></select></div>
-                <div class="field"><label for="f-code">Promo Code <span class="form-note">(Optional)</span></label><input id="f-code" type="text" autocomplete="off" placeholder="Enter code" /></div>
-              </div>
               <p class="form-note" id="night-count" role="status">Select your dates below.</p>
               <div class="calendar-toggle-wrap">
                 <button class="btn btn-ghost calendar-toggle" id="calendar-toggle" type="button" aria-expanded="false" aria-controls="calendar-panel"><span>Choose your nights</span><span class="calendar-summary" id="calendar-summary">Select dates</span></button>
@@ -62,6 +54,13 @@
                   <div class="cal-grid" id="cal-grid"></div>
                   <ul class="legend" aria-label="Calendar legend"><li><i class="lg-avail"></i>Available date</li><li><i class="lg-pick"></i>Check-in / check-out</li><li><i class="lg-stay"></i>Nights of stay</li><li><i class="lg-past"></i>Past date</li></ul>
                 </div>
+              </div>
+              <div class="date-fields">
+                <div class="field"><label for="f-checkin">Check-In</label><input id="f-checkin" type="text" readonly placeholder="Select date" /></div>
+                <div class="field"><label for="f-checkout">Check-Out</label><input id="f-checkout" type="text" readonly placeholder="Select date" /></div>
+                <div class="field"><label for="f-adults">Adults</label><select id="f-adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
+                <div class="field"><label for="f-children">Children</label><select id="f-children"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+                <div class="field"><label for="f-code">Promo Code <span class="form-note">(Optional)</span></label><input id="f-code" type="text" autocomplete="off" placeholder="Enter code" /></div>
               </div>
               <p class="status" id="step-status-1" role="status" aria-live="polite"></p>
               <div class="step-actions"><button class="btn btn-primary" id="to-rooms" type="button">CHECK AVAILABILITY</button></div>
@@ -112,7 +111,7 @@
                   <dt>Guests</dt><dd id="confirm-guests">2</dd>
                   <dt>Room Rate</dt><dd id="confirm-room-rate">₱7,500 × 0 nights</dd>
                   <dt>Add-ons</dt><dd id="confirm-addons">₱0</dd>
-                  <dt>Taxes &amp; Fees</dt><dd id="confirm-tax">₱0</dd>
+                  <dt>Service charge and Taxes</dt><dd id="confirm-tax">₱0</dd>
                   <dt>Total</dt><dd id="confirm-total">₱0</dd>
                 </dl>
                 <p class="status" id="step-status-5" role="status" aria-live="polite"></p>
@@ -124,6 +123,7 @@
             <h2>Booking Summary</h2>
             <div class="summary-row"><span>Date: <span id="sum-dates">Select dates</span></span><button id="edit-dates" type="button">Edit</button></div>
             <div class="summary-lines" id="sum-lines"><div class="line"><span>No room selected.</span></div></div>
+            <div class="summary-row"><span>Service charge and Taxes</span><span id="sum-tax">₱0</span></div>
             <div class="summary-total" id="sum-total"><span>Total</span><span>₱0</span></div>
           </aside>
         </div>

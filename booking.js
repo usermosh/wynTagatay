@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var TAX_RATE = 0.12;
+  var TAX_RATE = 0.1895;
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var TODAY = new Date();
   TODAY.setHours(0, 0, 0, 0);
@@ -114,6 +114,7 @@
     lines.innerHTML = '<div class="line"><span><b>' + selectedRoom().name + '</b><br>' + selectedRoom().size + ' · ' + selectedRoom().bed + '<br>' + (nightCount() || 0) + ' night(s)</span><span>' + money(roomTotal()) + '</span></div>';
     if (addonTotal()) lines.innerHTML += '<div class="line"><span>Add-ons</span><span>' + money(addonTotal()) + '</span></div>';
     total.innerHTML = '<span>Total</span><span>' + money(grandTotal()) + '</span>';
+    if ($('sum-tax')) $('sum-tax').textContent = money(taxTotal());
   }
 
   function renderConfirmation() {
@@ -165,8 +166,8 @@
     $('cal-prev').addEventListener('click', function () { base.month--; if (base.month < 0) { base.month = 11; base.year--; } renderCalendar(); });
     $('cal-next').addEventListener('click', function () { base.month++; if (base.month > 11) { base.month = 0; base.year++; } renderCalendar(); });
     ['f-adults', 'f-children'].forEach(function (id) { $(id).addEventListener('change', function () { state.adults = Number($('f-adults').value); state.children = Number($('f-children').value); renderSummary(); }); });
-    $('f-room-type').addEventListener('change', function () { state.room = $('f-room-type').value; renderRooms(); renderSummary(); });
-    $('f-code').addEventListener('input', function () { state.promo = $('f-code').value.trim(); });
+    if ($('f-room-type')) $('f-room-type').addEventListener('change', function () { state.room = $('f-room-type').value; renderRooms(); renderSummary(); });
+    if ($('f-code')) $('f-code').addEventListener('input', function () { state.promo = $('f-code').value.trim(); });
     $('to-rooms').addEventListener('click', function () { if (!state.checkin || !state.checkout) { status(1, 'Please select both check-in and check-out dates.'); return; } goStep(2); });
     $('back-to-search').addEventListener('click', function () { goStep(1); });
     $('to-enhance').addEventListener('click', function () { var room = selectedRoom(); if (state.adults + state.children > room.occupancy) { status(2, 'Please choose a room that accommodates your selected guests.'); return; } status(2, ''); goStep(3); });
@@ -176,7 +177,7 @@
     $('back-to-enhance').addEventListener('click', function () { goStep(3); });
     $('guest-form').addEventListener('submit', function (event) { event.preventDefault(); if (!$('guest-form').checkValidity()) { $('guest-form').reportValidity(); return; } state.guest = Object.fromEntries(new FormData($('guest-form')).entries()); renderConfirmation(); goStep(5); });
     $('back-to-details').addEventListener('click', function () { goStep(4); });
-    $('confirm-reservation').addEventListener('click', function () { var reference = 'LUN-' + Math.random().toString(36).slice(2, 8).toUpperCase(); var message = $('step-status-5'); message.textContent = 'Reservation ' + reference + ' confirmed for ' + state.guest.name + '. A confirmation email has been sent to ' + state.guest.email + '.'; $('confirm-reservation').disabled = true; });
+    $('confirm-reservation').addEventListener('click', function () { var reference = 'LUN-' + Math.random().toString(36).slice(2, 8).toUpperCase(); var message = $('step-status-5'); message.textContent = 'Reservation ' + reference + ' confirmed for ' + state.guest.name + '. A confirmation email has been sent to ' + state.guest.email + '.'; $('confirm-reservation').disabled = true; window.setTimeout(function () { window.location.href = 'index.html'; }, 1200); });
     $('edit-dates').addEventListener('click', function () { goStep(1); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();

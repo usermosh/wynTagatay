@@ -45,69 +45,93 @@
                 bed: '1 King Bed or 2 Twin Beds',
                 view: 'Garden / City View',
                 price: '₱6,500/night',
-                description: 'A comfortable and elegant retreat for guests seeking the signature Lunaire atmosphere at an accessible price. Designed with warm lighting, refined furnishings, and everything needed for a peaceful stay.',
-                amenities: ['King/Twin Bed', 'Smart TV', 'Work Desk', 'Air Conditioning', 'Mini Refrigerator', 'Coffee & Tea Station', 'In-Room Safe', 'Hair Dryer', 'Premium Bath Amenities', 'High-Speed Wi-Fi', 'Wardrobe and Luggage Space'],
+                description: 'A comfortable and elegant retreat for guests seeking the signature Lunaire atmosphere at an accessible price. Designed with warm lighting, refined furnishings, a rainfall shower, and everything needed for a peaceful stay.',
+                amenities: ['King Bed or 2 Twin Beds', 'Smart TV', 'Work Desk', 'Air Conditioning', 'Mini Refrigerator', 'Coffee & Tea Station', 'In-Room Safe', 'Hair Dryer', 'Rainfall Shower', 'Basic Bath Amenities', 'Wardrobe & Luggage Space', 'High-Speed Wi-Fi'],
                 includedServices: ['Daily Housekeeping', '24-Hour Guest Assistance', 'Complimentary Wi-Fi', 'Basic Welcome Amenities'],
                 image: 'Lunaire-Classic-Room.png'
             },
             deluxe: {
                 name: 'Lunaire Deluxe Room',
+                category: 'Enhanced Luxury',
+                recommendedFor: 'Couples and leisure travelers',
                 size: '34 sqm',
-                capacity: 'Up to 2 guests',
-                bed: 'King bed',
-                view: 'Garden or scenic view',
-                price: 'PHP 7,500 per sample night',
-                description: 'A spacious retreat with warm textures, restful surroundings, and room to unwind.',
+                capacity: '2 guests',
+                bed: 'King Bed',
+                view: 'Garden / Scenic View',
+                price: '₱7,500/night',
+                description: 'A more spacious retreat offering enhanced comfort, a dedicated seating area, coffee machine, premium bathroom amenities, and an enhanced scenic view.',
+                amenities: ['King Bed', 'Smart TV', 'Dedicated Seating Area', 'Work Desk', 'Air Conditioning', 'Mini Bar', 'Coffee Machine', 'In-Room Safe', 'Rainfall Shower', 'Premium Bath Amenities', 'Hair Dryer', 'Enhanced Scenic View', 'High-Speed Wi-Fi'],
+                includedServices: ['Daily Housekeeping', 'Turndown Service', 'Welcome Amenities', 'Complimentary Wi-Fi', '24-Hour Guest Assistance'],
                 image: 'Lunaire-Deluxe-Room.png'
             },
             premier: {
                 name: 'Lunaire Premier Room',
+                category: 'Premium Luxury',
+                recommendedFor: 'Couples, business travelers, and special occasions',
                 size: '40 sqm',
-                capacity: 'Up to 2 guests',
-                bed: 'King bed',
-                view: 'Scenic Tagaytay view',
-                price: 'PHP 8,500 per sample night',
-                description: 'A serene room for guests who want to slow down and settle into a more immersive stay.',
+                capacity: '2 guests',
+                bed: 'King Bed',
+                view: 'Scenic Tagaytay View',
+                price: '₱8,500/night',
+                description: 'A refined retreat with additional space, a dedicated work area, a freestanding bathtub, premium bathroom amenities, and a scenic Tagaytay view.',
+                amenities: ['King Bed', 'Separate Sitting Area', 'Premium Work Area', 'Smart TV', 'Air Conditioning', 'Mini Bar', 'Coffee Machine', 'In-Room Safe', 'Premium Bathroom', 'Freestanding Bathtub', 'Rainfall Shower', 'Premium Toiletries', 'Hair Dryer', 'Scenic Tagaytay View', 'High-Speed Wi-Fi'],
+                includedServices: ['Daily Housekeeping', 'Turndown Service', 'Priority Guest Assistance', 'Welcome Refreshments', 'Complimentary Wi-Fi'],
                 image: 'Lunaire-Premier-Room-with-Taal-View_.png'
             },
             junior: {
                 name: 'Lunaire Junior Suite',
+                category: 'Suite Collection',
+                recommendedFor: 'Couples and longer stays',
                 size: '52 sqm',
-                capacity: 'Up to 2–3 guests',
-                bed: 'King bed',
-                view: 'Scenic view',
-                price: 'PHP 10,500 per sample night',
-                description: 'A graceful suite with additional living space for romantic escapes, longer stays, and celebrations.',
+                capacity: '2–3 guests',
+                bed: 'King Bed',
+                view: 'Scenic Tagaytay View',
+                price: '₱10,500/night',
+                description: 'A spacious suite featuring a separate living area, sofa, dining space, premium bathroom, and scenic Tagaytay view for a more residential stay.',
+                amenities: ['King Bed', 'Separate Living Area', 'Sofa', 'Dining/Seating Area', 'Smart TV', 'Premium Work Area', 'Mini Bar', 'Coffee Machine', 'In-Room Safe', 'Premium Bathroom', 'Freestanding Bathtub', 'Rainfall Shower', 'Premium Toiletries', 'Hair Dryer', 'Scenic Tagaytay View', 'High-Speed Wi-Fi'],
+                includedServices: ['Daily Housekeeping', 'Turndown Service', 'Welcome Amenities', 'Welcome Refreshments', 'Priority Guest Assistance', 'Complimentary Wi-Fi'],
                 image: 'Lunaire-Junior-Suite_.png'
             },
             executive: {
                 name: 'Lunaire Executive Suite',
+                category: 'Executive Collection',
+                recommendedFor: 'VIPs, business travelers, and celebrations',
                 size: '68 sqm',
-                capacity: 'Up to 2–3 guests',
-                bed: 'King bed',
-                view: 'Panoramic view',
-                price: 'PHP 13,500 per sample night',
-                description: 'A sophisticated suite designed for rest, work, and a more immersive stay.',
+                capacity: '2–3 guests',
+                bed: 'King Bed',
+                view: 'Panoramic Scenic View',
+                price: '₱13,500/night',
+                description: 'A spacious private retreat with a separate bedroom, living room, dining area, walk-in closet, panoramic view, and personalized service.',
+                amenities: ['Separate Bedroom', 'Spacious Living Room', 'Dining Area', 'Dedicated Work Area', 'King Bed', 'Large Smart TV', 'Premium Bathroom', 'Freestanding Bathtub', 'Rainfall Shower', 'Walk-In Closet', 'Mini Bar', 'Coffee Machine', 'In-Room Safe', 'Premium Toiletries', 'Panoramic Scenic View', 'High-Speed Wi-Fi'],
+                includedServices: ['Priority Concierge Assistance', 'Daily Housekeeping', 'Turndown Service', 'Personalized Welcome Amenities', 'Complimentary Evening Refreshments', 'Priority Restaurant/Event Reservations', 'Complimentary Wi-Fi'],
                 image: 'Executive-Suite_.png'
             },
             moonlight: {
                 name: 'Moonlight Suite',
+                category: 'Lunaire Signature Collection',
+                recommendedFor: 'Honeymoons, anniversaries, proposals, VIP guests, and milestone celebrations',
                 size: '90 sqm',
-                capacity: 'Up to 2 guests',
-                bed: 'King bed',
-                view: 'Panoramic Tagaytay view',
-                price: 'PHP 17,500 per sample night',
-                description: 'The signature suite concept with expansive space, panoramic scenery, and a private balcony concept.',
+                capacity: '2 guests',
+                bed: 'King Bed',
+                view: 'Panoramic Tagaytay View',
+                price: '₱17,500/night',
+                description: 'Our signature accommodation with expansive living spaces, a private balcony, panoramic Tagaytay view, private dining area, refined finishes, and intimate nighttime ambiance.',
+                amenities: ['King Bed', 'Large Separate Living Room', 'Private Balcony', 'Panoramic Tagaytay View', 'Private Dining Area', 'Freestanding Bathtub', 'Premium Bathroom', 'Walk-In Closet', 'Premium Lounge Seating', 'Large Smart TV', 'Mini Bar', 'Coffee Machine', 'In-Room Safe', 'Premium Toiletries', 'Luxury Bathrobes & Slippers', 'Personalized Welcome Setup', 'High-Speed Wi-Fi'],
+                includedServices: ['Dedicated Concierge Assistance', 'Priority Check-In & Check-Out', 'Daily Housekeeping', 'Turndown Service', 'Personalized Welcome Amenities', 'Evening Refreshments', 'Priority Dining & Event Reservations', 'Private Dining Arrangement Upon Request', 'Complimentary Moonlight Experience', 'Complimentary Wi-Fi'],
                 image: 'Moonlight-Suite.png'
             },
             family: {
                 name: 'Family / Connecting Rooms',
+                category: 'Comfort for Togetherness',
+                recommendedFor: 'Families and small groups',
                 size: '56 sqm combined',
                 capacity: 'Up to 4 guests',
-                bed: 'King bed plus twin beds',
-                view: 'Flexible family layout',
-                price: 'PHP 12,000 per sample night',
-                description: 'A flexible accommodation concept for families or small groups who want comfort and personal space.',
+                bed: '1 King Bed + 2 Twin Beds',
+                view: 'Garden / Scenic View',
+                price: '₱12,000/night',
+                description: 'Flexible accommodation with two connecting rooms, one king bed, two twin beds, two private bathrooms, and garden or scenic views.',
+                amenities: ['Two Connecting Rooms', '1 King Bed + 2 Twin Beds', 'Two Private Bathrooms', 'Two Smart TVs', 'Two Wardrobes', 'Mini Refrigerator', 'Coffee & Tea Station', 'In-Room Safe', 'Hair Dryers', 'Premium Bath Amenities', 'Garden / Scenic View', 'High-Speed Wi-Fi'],
+                includedServices: ['Daily Housekeeping', 'Complimentary Wi-Fi', 'Family Welcome Amenities', '24-Hour Guest Assistance', 'Additional Bed/Baby Cot Upon Request'],
                 image: 'Family-Experience_.png'
             }
         }
@@ -115,6 +139,7 @@
 
     function initDynamic() {
         normalizePrimaryNav();
+        normalizeFooter();
         initCardExpanders();
         initRoomDetail();
         initContactForm();
@@ -164,11 +189,14 @@
         document.getElementById('room-bed').textContent = room.bed;
         document.getElementById('room-view').textContent = room.view;
         document.getElementById('room-price').textContent = room.price;
-        document.getElementById('room-description').textContent = room.description;
         var category = document.getElementById('room-category');
         var recommended = document.getElementById('room-recommended');
+        var featureLabel = document.getElementById('room-feature-label');
+        var serviceLabel = document.getElementById('room-service-label');
         if (category) category.textContent = room.category || 'Lunaire Collection';
         if (recommended) recommended.textContent = room.recommendedFor || 'Guests seeking a restorative escape';
+        if (featureLabel) featureLabel.textContent = ({ junior: 'Suite Features', executive: 'Suite Features', moonlight: 'Signature Suite Features', family: 'Room Features' }[key] || 'In-Room Features');
+        if (serviceLabel) serviceLabel.textContent = key === 'moonlight' ? 'Signature Privileges' : 'Included Services';
         renderRoomList('room-amenities', room.amenities);
         renderRoomList('room-services', room.includedServices);
         var image = document.getElementById('room-image');
@@ -215,6 +243,12 @@
         book.textContent = 'Book Now';
         if (current === 'booking.html') book.setAttribute('aria-current', 'page');
         nav.appendChild(book);
+    }
+
+    function normalizeFooter() {
+        var footer = document.querySelector('footer');
+        if (!footer) return;
+        footer.innerHTML = '<div class="wrap"><div class="foot-grid"><div><a class="brand" href="index.html" style="margin-bottom:1rem" aria-label="Lunaire home"><img class="brand-logo" src="logo.png" alt="Lunaire" width="78" height="48" /></a><p style="color:var(--text-secondary);max-width:38ch">An elite sanctuary where quiet elegance and personal reflection meet.</p></div><nav aria-label="Explore"><h4>Explore</h4><a href="rooms.html">Rooms</a><a href="dining.html">Dining</a><a href="wellness-recreation.html">Wellness &amp; Recreation</a><a href="entertainment-leisure.html">Entertainment &amp; Leisure</a></nav><nav aria-label="Hotel"><h4>Hotel</h4><a href="about.html">Our story</a><a href="about.html#values">Core values</a><a href="contact.html">Contact</a></nav><div><h4>Discover</h4><a href="experiences.html">Experiences</a><a href="offers.html">Offers</a><a href="events.html">Events</a><a href="gallery.html">Gallery</a><a href="guest-services.html">Guest services</a><a href="faq.html">FAQ</a><a href="policies.html">Policies</a><a href="cancellation-policy.html">Cancellation</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="accessibility.html">Accessibility</a><a href="cookie-notice.html">Cookie notice</a></div></div><div class="foot-base"><span>© 2026 Lunaire Boutique Hotel Resort. All rights reserved.</span><span>Where memories shine under the moonlight.</span></div></div>';
     }
 
     function initContactContext() {
